@@ -14,6 +14,7 @@
 		4A6E47B32AC4778E0018D3F4 /* Entropy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E47B22AC4778E0018D3F4 /* Entropy.swift */; };
 		4A7343C92AC47A1D00728007 /* Bitcoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7343C82AC47A1D00728007 /* Bitcoin.swift */; };
 		4A7343CB2AC47A9500728007 /* Mnemonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7343CA2AC47A9500728007 /* Mnemonic.swift */; };
+		4A7343CE2AC4804700728007 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4A7343CD2AC4804700728007 /* CryptoSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A7343CE2AC4804700728007 /* CryptoSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,6 +118,9 @@
 			dependencies = (
 			);
 			name = "HD Wallet";
+			packageProductDependencies = (
+				4A7343CD2AC4804700728007 /* CryptoSwift */,
+			);
 			productName = "HD Wallet";
 			productReference = 4A6E479E2AC476330018D3F4 /* HD Wallet.app */;
 			productType = "com.apple.product-type.application";
@@ -144,6 +149,9 @@
 				Base,
 			);
 			mainGroup = 4A6E47952AC476330018D3F4;
+			packageReferences = (
+				4A7343CC2AC4804700728007 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
+			);
 			productRefGroup = 4A6E479F2AC476330018D3F4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -380,6 +388,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4A7343CC2AC4804700728007 /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4A7343CD2AC4804700728007 /* CryptoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A7343CC2AC4804700728007 /* XCRemoteSwiftPackageReference "CryptoSwift" */;
+			productName = CryptoSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4A6E47962AC476330018D3F4 /* Project object */;
 }

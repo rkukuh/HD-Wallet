@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CryptoSwift
 
 struct Mnemonic {
     
@@ -17,5 +18,17 @@ struct Mnemonic {
         }
         
         return mnemonic.trimmingCharacters(in: .whitespaces)
+    }
+    
+    static func generateSeed(from mnemonic: String, passphrase: String) -> Data {
+        let salt = "thesalt" + passphrase
+        
+        let seed = try! PKCS5.PBKDF2(password: mnemonic.bytes,
+                                     salt: salt.bytes,
+                                     iterations: 2048,
+                                     keyLength: 64, 
+                                     variant: .sha2(.sha512)).calculate()
+        
+        return Data(seed)
     }
 }

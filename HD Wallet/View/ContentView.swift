@@ -8,31 +8,61 @@
 import SwiftUI
 
 struct ContentView: View {
-    let entropy = Entropy.generate(from: 256)
+    
+    @State private var entropy: Data = .init()
+    @State private var mnemonic: String = .init()
+    @State private var seed: Data = .init()
+    
+    let passphrase = "b1gs3cr3t"
     
     var body: some View {
-        VStack {
-            VStack(alignment: .leading) {
-                Text("Entropy")
-                    .font(.callout)
-                    .foregroundStyle(.secondary)
-                    .padding(.bottom, 5)
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading) {
+                    Text("Entropy")
+                        .font(.callout)
+                        .foregroundStyle(.secondary)
+                        .padding(.bottom, 5)
+                    
+                    Text("\(entropy.toHexString())")
+                        .onAppear {
+                            entropy = Entropy.generate(from: 256)
+                        }
+                }
+                .padding()
+                .border(.red)
                 
-                Text("\(entropy)")
-            }
-            .padding()
-            
-            Divider()
-            
-            VStack(alignment: .leading) {
-                Text("Mnemonic")
-                    .font(.callout)
-                    .foregroundStyle(.secondary)
-                    .padding(.bottom, 5)
+                VStack(alignment: .leading) {
+                    Text("Mnemonic")
+                        .font(.callout)
+                        .foregroundStyle(.secondary)
+                        .padding(.bottom, 5)
+                    
+                    Text(mnemonic)
+                        .onAppear {
+                            mnemonic = Mnemonic.convert(from: entropy, wordList: Bitcoin.BIP39WordList)
+                        }
+                }
+                .padding()
+                .border(.red)
                 
-                Text(Mnemonic.convert(from: entropy, wordList: Bitcoin.BIP39WordList))
+                VStack(alignment: .leading) {
+                    Text("Seed")
+                        .font(.callout)
+                        .foregroundStyle(.secondary)
+                        .padding(.bottom, 5)
+                    
+                    Text("\(seed.toHexString())")
+                        .onAppear {
+                            seed = Mnemonic.generateSeed(from: mnemonic, passphrase: passphrase)
+                        }
+                }
+                .padding()
+                .border(.red)
+                
+                Spacer()
             }
-            .padding()
+            .navigationTitle("HD Wallet")
         }
     }
 }
