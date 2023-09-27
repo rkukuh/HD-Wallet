@@ -52,7 +52,9 @@
 			isa = PBXGroup;
 			children = (
 				4A6E47A12AC476330018D3F4 /* HD_WalletApp.swift */,
-				4A6E47A32AC476330018D3F4 /* ContentView.swift */,
+				4A6E47AF2AC476A10018D3F4 /* Model */,
+				4A6E47B02AC476B50018D3F4 /* View */,
+				4A6E47B12AC476BD0018D3F4 /* ViewModel */,
 				4A6E47A52AC476340018D3F4 /* Assets.xcassets */,
 				4A6E47A72AC476340018D3F4 /* Preview Content */,
 			);
@@ -65,6 +67,28 @@
 				4A6E47A82AC476340018D3F4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		4A6E47AF2AC476A10018D3F4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4A6E47B02AC476B50018D3F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4A6E47A32AC476330018D3F4 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4A6E47B12AC476BD0018D3F4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
