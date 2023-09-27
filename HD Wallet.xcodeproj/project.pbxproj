@@ -12,6 +12,8 @@
 		4A6E47A62AC476340018D3F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A6E47A52AC476340018D3F4 /* Assets.xcassets */; };
 		4A6E47A92AC476340018D3F4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A6E47A82AC476340018D3F4 /* Preview Assets.xcassets */; };
 		4A6E47B32AC4778E0018D3F4 /* Entropy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E47B22AC4778E0018D3F4 /* Entropy.swift */; };
+		4A7343C92AC47A1D00728007 /* Bitcoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7343C82AC47A1D00728007 /* Bitcoin.swift */; };
+		4A7343CB2AC47A9500728007 /* Mnemonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7343CA2AC47A9500728007 /* Mnemonic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +23,8 @@
 		4A6E47A52AC476340018D3F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A6E47A82AC476340018D3F4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4A6E47B22AC4778E0018D3F4 /* Entropy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entropy.swift; sourceTree = "<group>"; };
+		4A7343C82AC47A1D00728007 /* Bitcoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitcoin.swift; sourceTree = "<group>"; };
+		4A7343CA2AC47A9500728007 /* Mnemonic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mnemonic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +78,9 @@
 		4A6E47AF2AC476A10018D3F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4A7343C82AC47A1D00728007 /* Bitcoin.swift */,
 				4A6E47B22AC4778E0018D3F4 /* Entropy.swift */,
+				4A7343CA2AC47A9500728007 /* Mnemonic.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -164,9 +170,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A7343C92AC47A1D00728007 /* Bitcoin.swift in Sources */,
 				4A6E47A42AC476330018D3F4 /* ContentView.swift in Sources */,
 				4A6E47B32AC4778E0018D3F4 /* Entropy.swift in Sources */,
 				4A6E47A22AC476330018D3F4 /* HD_WalletApp.swift in Sources */,
+				4A7343CB2AC47A9500728007 /* Mnemonic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,15 +8,32 @@
 import SwiftUI
 
 struct ContentView: View {
+    let entropy = Entropy.generate(from: 256)
+    
     var body: some View {
         VStack {
-            HStack {
+            VStack(alignment: .leading) {
                 Text("Entropy")
-                Spacer()
-                Text("\(Entropy.generate(from: 128))")
+                    .font(.callout)
+                    .foregroundStyle(.secondary)
+                    .padding(.bottom, 5)
+                
+                Text("\(entropy)")
             }
+            .padding()
+            
+            Divider()
+            
+            VStack(alignment: .leading) {
+                Text("Mnemonic")
+                    .font(.callout)
+                    .foregroundStyle(.secondary)
+                    .padding(.bottom, 5)
+                
+                Text(Mnemonic.convert(from: entropy, wordList: Bitcoin.BIP39WordList))
+            }
+            .padding()
         }
-        .padding()
     }
 }
 
