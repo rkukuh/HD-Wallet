@@ -54,7 +54,7 @@ struct ContentView: View {
                     
                     Text("\(seed.toHexString())")
                         .onAppear {
-                            seed = Mnemonic.generateSeed(from: mnemonic, passphrase: passphrase)
+                            seed = Seeder.generate(from: mnemonic, with: passphrase)
                         }
                 }
                 .padding()
