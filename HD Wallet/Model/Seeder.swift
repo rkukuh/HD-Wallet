@@ -21,4 +21,11 @@ struct Seeder {
         
         return Data(seed)
     }
+    
+    static func splitSeed(_ seed: Data) -> (masterPrivateKey: Data, chainCode: Data) {
+        let masterPrivateKey = seed.prefix(32)
+        let chainCode = seed.suffix(32)
+        
+        return (masterPrivateKey, chainCode)
+    }
 }
