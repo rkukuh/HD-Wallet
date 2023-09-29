@@ -14,4 +14,8 @@ extension Data {
             String(byte, radix: 2).padding(toLength: 8, withPad: "0", startingAt: 0)
         }.joined()
     }
+    
+    func toHexString() -> String {
+        return self.map { String(format: "%02x", $0) }.joined()
+    }
 }
