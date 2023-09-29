@@ -131,7 +131,7 @@ struct ContentView: View {
             .onAppear {
                 entropy = Entropy.generate(for: 256)
                 
-                seedPhrase = Mnemonic.convert(from: entropy, wordList: Bitcoin.BIP39WordList)
+                seedPhrase = Mnemonic.convert(from: entropy, using: Bitcoin.BIP39WordList)
                 
                 seed = Seeder.generate(from: seedPhrase, with: passphrase)
                 
