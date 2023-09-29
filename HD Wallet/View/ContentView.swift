@@ -13,7 +13,7 @@ struct ContentView: View {
     @State private var seedPhrase: String = .init()
     @State private var seed: Data = .init()
     
-    @State private var masterPrivateKey: Data = .init()
+    @State private var masterKey: Data = .init()
     @State private var chainCode: Data = .init()
     
     // MARK: Step 3: Optional Password (Salt)
@@ -101,7 +101,7 @@ struct ContentView: View {
                             .foregroundStyle(.secondary)
                             .padding(.bottom, 5)
                         
-                        Text("\(masterPrivateKey.base64EncodedString())")
+                        Text("\(masterKey.base64EncodedString())")
                     }
                     
                     Divider()
@@ -131,7 +131,7 @@ struct ContentView: View {
                 
                 seed = Seeder.generate(from: seedPhrase, with: passphrase)
                 
-                (masterPrivateKey, chainCode) = Seeder.splitSeed(seed)
+                (masterKey, chainCode) = Seeder.splitSeed(seed)
             }
             .navigationTitle("HD Wallet")
         }

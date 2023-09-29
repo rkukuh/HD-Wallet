@@ -29,10 +29,10 @@ struct Seeder {
         return seedInHexFormat.count == 128 && validHexCharacters.isSuperset(of: seedCharacterSet)
     }
     
-    static func splitSeed(_ seed: Data) -> (masterPrivateKey: Data, chainCode: Data) {
-        let masterPrivateKey = seed.prefix(32)
+    static func splitSeed(_ seed: Data) -> (masterKey: Data, chainCode: Data) {
+        let masterKey = seed.prefix(32)
         let chainCode = seed.suffix(32)
         
-        return (masterPrivateKey, chainCode)
+        return (masterKey, chainCode)
     }
 }
