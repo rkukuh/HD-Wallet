@@ -89,11 +89,11 @@
 		4A6E47AF2AC476A10018D3F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				4A7343D52AC500CE00728007 /* WalletKey.swift */,
-				4A7343D12AC4FDE000728007 /* Seeder.swift */,
 				4A7343C82AC47A1D00728007 /* Bitcoin.swift */,
 				4A6E47B22AC4778E0018D3F4 /* Entropy.swift */,
 				4A7343CA2AC47A9500728007 /* Mnemonic.swift */,
+				4A7343D12AC4FDE000728007 /* Seeder.swift */,
+				4A7343D52AC500CE00728007 /* WalletKey.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

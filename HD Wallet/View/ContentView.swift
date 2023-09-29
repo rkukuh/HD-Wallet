@@ -129,7 +129,7 @@ struct ContentView: View {
                 // Step 6 code goes here...
             }
             .onAppear {
-                entropy = Entropy.generate(for: 128)
+                entropy = Entropy.generate(for: 256)
                 
                 seedPhrase = Mnemonic.convert(from: entropy, wordList: Bitcoin.BIP39WordList)
                 
