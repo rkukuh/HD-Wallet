@@ -10,17 +10,21 @@ import SwiftUI
 struct ContentView: View {
     
     @State private var entropy: Data = .init()
-    @State private var mnemonic: String = .init()
+    @State private var seedPhrase: String = .init()
     @State private var seed: Data = .init()
     
     @State private var masterPrivateKey: Data = .init()
     @State private var chainCode: Data = .init()
     
+    // MARK: Step 3: Optional Password (Salt)
     let passphrase = "b1gs3cr3t"
     
     var body: some View {
         NavigationStack {
             ScrollView {
+                
+                // MARK: Step 1: Generate Entropy
+                
                 VStack(alignment: .leading) {
                     Text("Entropy")
                         .font(.callout)
@@ -32,16 +36,20 @@ struct ContentView: View {
                 .padding()
                 .border(.red)
                 
+                // MARK: Step 2: Convert Entropy to Mnemonic Seed Phrase
+                
                 VStack(alignment: .leading) {
-                    Text("Mnemonic")
+                    Text("Seed Phrase")
                         .font(.callout)
                         .foregroundStyle(.secondary)
                         .padding(.bottom, 5)
                     
-                    Text(mnemonic)
+                    Text(seedPhrase)
                 }
                 .padding()
                 .border(.red)
+                
+                // MARK: Step 4: Generate Seed from Seed Phrase
                 
                 VStack(alignment: .leading) {
                     Text("Seed")
@@ -55,6 +63,8 @@ struct ContentView: View {
                 .border(.red)
                 
                 Spacer()
+                
+                // MARK: Step 5: Generate HD Wallet
                 
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
@@ -81,13 +91,17 @@ struct ContentView: View {
                 .border(.red)
                 
                 Spacer()
+                
+                // MARK: Step 6: Generate Private Key and Public Key
+                
+                // Step 5 code goes here...
             }
             .onAppear {
                 entropy = Entropy.generate(from: 256)
                 
-                mnemonic = Mnemonic.convert(from: entropy, wordList: Bitcoin.BIP39WordList)
+                seedPhrase = Mnemonic.convert(from: entropy, wordList: Bitcoin.BIP39WordList)
                 
-                seed = Seeder.generate(from: mnemonic, with: passphrase)
+                seed = Seeder.generate(from: seedPhrase, with: passphrase)
                 
                 (masterPrivateKey, chainCode) = Seeder.splitSeed(seed)
             }
