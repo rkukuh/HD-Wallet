@@ -17,6 +17,7 @@
 		4A7343CE2AC4804700728007 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4A7343CD2AC4804700728007 /* CryptoSwift */; };
 		4A7343D22AC4FDE000728007 /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7343D12AC4FDE000728007 /* Seeder.swift */; };
 		4A7343D62AC500CE00728007 /* Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7343D52AC500CE00728007 /* Key.swift */; };
+		4AA961992AC6C63A001C3785 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA961982AC6C63A001C3785 /* Data+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		4A7343CA2AC47A9500728007 /* Mnemonic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mnemonic.swift; sourceTree = "<group>"; };
 		4A7343D12AC4FDE000728007 /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
 		4A7343D52AC500CE00728007 /* Key.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Key.swift; sourceTree = "<group>"; };
+		4AA961982AC6C63A001C3785 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				4A6E47AF2AC476A10018D3F4 /* Model */,
 				4A6E47B02AC476B50018D3F4 /* View */,
 				4A6E47B12AC476BD0018D3F4 /* ViewModel */,
+				4AA961972AC6C625001C3785 /* Extension */,
 				4A6E47A52AC476340018D3F4 /* Assets.xcassets */,
 				4A6E47A72AC476340018D3F4 /* Preview Content */,
 			);
@@ -106,6 +109,14 @@
 			children = (
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		4AA961972AC6C625001C3785 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4AA961982AC6C63A001C3785 /* Data+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +196,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A7343D62AC500CE00728007 /* Key.swift in Sources */,
+				4AA961992AC6C63A001C3785 /* Data+Extension.swift in Sources */,
 				4A7343C92AC47A1D00728007 /* Bitcoin.swift in Sources */,
 				4A6E47A42AC476330018D3F4 /* ContentView.swift in Sources */,
 				4A6E47B32AC4778E0018D3F4 /* Entropy.swift in Sources */,
