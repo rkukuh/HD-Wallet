@@ -8,7 +8,7 @@
 import Foundation
 import CryptoSwift
 
-struct Key {
+struct WalletKey {
     
     static func generateMasterKey(from seed: Data) -> (privateKey: Data, 
                                                        chainCode: Data) {

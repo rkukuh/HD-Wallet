@@ -124,9 +124,9 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                // MARK: Step 6: Generate Private Key and Public Key
+                // MARK: Step 6: Generate (Child) Private Key and Public Key
                 
-                // Step 5 code goes here...
+                // Step 6 code goes here...
             }
             .onAppear {
                 entropy = Entropy.generate(for: 128)
@@ -135,7 +135,7 @@ struct ContentView: View {
                 
                 seed = Seeder.generate(from: seedPhrase, with: passphrase)
                 
-                (privateKey, chainCode) = Key.generateMasterKey(from: seed)
+                (privateKey, chainCode) = WalletKey.generateMasterKey(from: seed)
             }
             .navigationTitle("HD Wallet")
         }
