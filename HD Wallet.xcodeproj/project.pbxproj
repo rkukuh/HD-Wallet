@@ -19,6 +19,8 @@
 		4A7343D62AC500CE00728007 /* WalletKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7343D52AC500CE00728007 /* WalletKey.swift */; };
 		4AA961992AC6C63A001C3785 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA961982AC6C63A001C3785 /* Data+Extension.swift */; };
 		4AA9619B2AC6E6AC001C3785 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA9619A2AC6E6AC001C3785 /* String+Extension.swift */; };
+		4AA9619E2AC6F9F3001C3785 /* secp256k1 in Frameworks */ = {isa = PBXBuildFile; productRef = 4AA9619D2AC6F9F3001C3785 /* secp256k1 */; };
+		4AA961A02AC6F9F3001C3785 /* zkp in Frameworks */ = {isa = PBXBuildFile; productRef = 4AA9619F2AC6F9F3001C3785 /* zkp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,7 +43,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AA961A02AC6F9F3001C3785 /* zkp in Frameworks */,
 				4A7343CE2AC4804700728007 /* CryptoSwift in Frameworks */,
+				4AA9619E2AC6F9F3001C3785 /* secp256k1 in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +144,8 @@
 			name = "HD Wallet";
 			packageProductDependencies = (
 				4A7343CD2AC4804700728007 /* CryptoSwift */,
+				4AA9619D2AC6F9F3001C3785 /* secp256k1 */,
+				4AA9619F2AC6F9F3001C3785 /* zkp */,
 			);
 			productName = "HD Wallet";
 			productReference = 4A6E479E2AC476330018D3F4 /* HD Wallet.app */;
@@ -171,6 +177,7 @@
 			mainGroup = 4A6E47952AC476330018D3F4;
 			packageReferences = (
 				4A7343CC2AC4804700728007 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
+				4AA9619C2AC6F9F3001C3785 /* XCRemoteSwiftPackageReference "secp256k1" */,
 			);
 			productRefGroup = 4A6E479F2AC476330018D3F4 /* Products */;
 			projectDirPath = "";
@@ -422,6 +429,14 @@
 				minimumVersion = 1.8.0;
 			};
 		};
+		4AA9619C2AC6F9F3001C3785 /* XCRemoteSwiftPackageReference "secp256k1" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GigaBitcoin/secp256k1.swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.13.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -429,6 +444,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4A7343CC2AC4804700728007 /* XCRemoteSwiftPackageReference "CryptoSwift" */;
 			productName = CryptoSwift;
+		};
+		4AA9619D2AC6F9F3001C3785 /* secp256k1 */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AA9619C2AC6F9F3001C3785 /* XCRemoteSwiftPackageReference "secp256k1" */;
+			productName = secp256k1;
+		};
+		4AA9619F2AC6F9F3001C3785 /* zkp */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4AA9619C2AC6F9F3001C3785 /* XCRemoteSwiftPackageReference "secp256k1" */;
+			productName = zkp;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
