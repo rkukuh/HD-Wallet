@@ -22,6 +22,13 @@ struct Seeder {
         return Data(seed)
     }
     
+    static func isValidHex(of seedInHexFormat: String) -> Bool {
+        let validHexCharacters = CharacterSet(charactersIn: "0123456789abcdefABCDEF")
+        let seedCharacterSet = CharacterSet(charactersIn: seedInHexFormat)
+        
+        return seedInHexFormat.count == 128 && validHexCharacters.isSuperset(of: seedCharacterSet)
+    }
+    
     static func splitSeed(_ seed: Data) -> (masterPrivateKey: Data, chainCode: Data) {
         let masterPrivateKey = seed.prefix(32)
         let chainCode = seed.suffix(32)

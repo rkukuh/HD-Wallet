@@ -56,10 +56,32 @@ struct ContentView: View {
                 // MARK: Step 4: Generate Seed from Seed Phrase
                 
                 VStack(alignment: .leading) {
-                    Text("Seed")
-                        .font(.callout)
-                        .foregroundStyle(.secondary)
-                        .padding(.bottom, 5)
+                    HStack {
+                        Text("Seed")
+                            .font(.callout)
+                            .foregroundStyle(.secondary)
+                            .padding(.bottom, 5)
+                        
+                        if Seeder.isValidHex(of: seed.toHexString()) {
+                            Text("Valid")
+                                .frame(width: 65)
+                                .foregroundColor(.green)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .stroke(.green)
+                                )
+                                .padding(.bottom, 5)
+                        } else {
+                            Text("Tempered")
+                                .frame(width: 100)
+                                .foregroundColor(.red)
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 5)
+                                        .stroke(.red)
+                                )
+                                .padding(.bottom, 5)
+                        }
+                    }
                     
                     Text("\(seed.toHexString())")
                         .frame(height: 50)
