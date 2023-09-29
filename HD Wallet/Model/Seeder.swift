@@ -28,11 +28,4 @@ struct Seeder {
         
         return seedInHexFormat.count == 128 && validHexCharacters.isSuperset(of: seedCharacterSet)
     }
-    
-    static func splitSeed(_ seed: Data) -> (masterKey: Data, chainCode: Data) {
-        let masterKey = seed.prefix(32)
-        let chainCode = seed.suffix(32)
-        
-        return (masterKey, chainCode)
-    }
 }

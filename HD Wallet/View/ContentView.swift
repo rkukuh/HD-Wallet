@@ -13,7 +13,7 @@ struct ContentView: View {
     @State private var seedPhrase: String = .init()
     @State private var seed: Data = .init()
     
-    @State private var masterKey: Data = .init()
+    @State private var privateKey: Data = .init()
     @State private var chainCode: Data = .init()
     
     // MARK: Step 3: Optional Password (Salt)
@@ -96,23 +96,27 @@ struct ContentView: View {
                 
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
-                        Label("Private Key", systemImage: "key.fill")
+                        Label("Private Key (Master)", systemImage: "key.fill")
                             .font(.callout)
                             .foregroundStyle(.secondary)
                             .padding(.bottom, 5)
                         
-                        Text("\(masterKey.base64EncodedString())")
+                        Text("\(privateKey.toHexString())")
+                            .frame(height: 50)
+                            .truncationMode(.middle)
                     }
                     
                     Divider()
                     
                     VStack(alignment: .leading) {
-                        Label("Chain", systemImage: "link")
+                        Label("Chain Code", systemImage: "link")
                             .font(.callout)
                             .foregroundStyle(.secondary)
                             .padding(.bottom, 5)
                         
-                        Text("\(chainCode.base64EncodedString())")
+                        Text("\(chainCode.toHexString())")
+                            .frame(height: 50)
+                            .truncationMode(.middle)
                     }
                 }
                 .padding()
@@ -131,7 +135,7 @@ struct ContentView: View {
                 
                 seed = Seeder.generate(from: seedPhrase, with: passphrase)
                 
-                (masterKey, chainCode) = Seeder.splitSeed(seed)
+                (privateKey, chainCode) = Key.generateMasterKey(from: seed)
             }
             .navigationTitle("HD Wallet")
         }

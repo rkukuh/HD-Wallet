@@ -6,21 +6,18 @@
 //
 
 import Foundation
-import CryptoKit
+import CryptoSwift
 
 struct Key {
     
-    static func generateChildPrivateKey(for masterPrivateKey: Data, 
-                                        with chainCode: Data, index: UInt32) -> Data {
+    static func generateMasterKey(from seed: Data) -> (privateKey: Data, 
+                                                       chainCode: Data) {
+        let hmac = try! HMAC(key: seed.bytes, variant: .sha2(.sha512))
+            .authenticate(seed.bytes)
         
-        var data = masterPrivateKey
+        let privateKey = Data(hmac[0..<32])
+        let chainCode = Data(hmac[32..<64])
         
-        data.append(contentsOf: withUnsafeBytes(of: index.bigEndian) { Data($0) })
-        
-        let hmacKey = SymmetricKey(data: chainCode)
-        let childHash = HMAC<SHA512>.authenticationCode(for: data, using: hmacKey)
-        let childPrivateKey = Data(childHash.prefix(32))
-        
-        return childPrivateKey
+        return (privateKey, chainCode)
     }
 }
