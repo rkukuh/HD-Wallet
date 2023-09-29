@@ -26,7 +26,7 @@ struct ContentView: View {
                 // MARK: Step 1: Generate Entropy
                 
                 VStack(alignment: .leading) {
-                    Text("Entropy")
+                    Label("Entropy", systemImage: "sparkle")
                         .font(.callout)
                         .foregroundStyle(.secondary)
                         .padding(.bottom, 5)
@@ -41,7 +41,7 @@ struct ContentView: View {
                 // MARK: Step 2: Convert Entropy to Mnemonic Seed Phrase
                 
                 VStack(alignment: .leading) {
-                    Text("Seed Phrase")
+                    Label("Seed Phrase", systemImage: "text.book.closed")
                         .font(.callout)
                         .foregroundStyle(.secondary)
                         .padding(.bottom, 5)
@@ -57,7 +57,7 @@ struct ContentView: View {
                 
                 VStack(alignment: .leading) {
                     HStack {
-                        Text("Seed")
+                        Label("Seed", systemImage: "leaf.arrow.circlepath")
                             .font(.callout)
                             .foregroundStyle(.secondary)
                             .padding(.bottom, 5)
@@ -96,7 +96,7 @@ struct ContentView: View {
                 
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
-                        Text("PrivateKey")
+                        Label("Private Key", systemImage: "key.fill")
                             .font(.callout)
                             .foregroundStyle(.secondary)
                             .padding(.bottom, 5)
@@ -107,7 +107,7 @@ struct ContentView: View {
                     Divider()
                     
                     VStack(alignment: .leading) {
-                        Text("Chain")
+                        Label("Chain", systemImage: "link")
                             .font(.callout)
                             .foregroundStyle(.secondary)
                             .padding(.bottom, 5)
