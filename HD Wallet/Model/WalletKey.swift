@@ -8,6 +8,7 @@
 import Foundation
 import CryptoSwift
 import CryptoKit
+import CommonCrypto
 
 struct WalletKey {
     
@@ -34,15 +35,16 @@ struct WalletKey {
         return Data(childHash.prefix(32))
     }
     
-    static func generatePublicKey(from privateKey: Data) -> Data? {
-        do {
-            let privateKey = try P256.Signing.PrivateKey(rawRepresentation: privateKey)
-            
-            return privateKey.publicKey.rawRepresentation
-        } catch {
-            print("Error generating public key: \(error.localizedDescription)")
-            
-            return nil
-        }
+    static func generatePublicKey(from privateKey: Data) -> Data {
+        let privateKey = try! P256.Signing.PrivateKey(rawRepresentation: privateKey)
+        
+        return privateKey.publicKey.rawRepresentation
+    }
+    
+    static func generatePublicAddress(publicKey: Data) -> String {
+        // Normally, we'd perform SHA-256, then RIPEMD-160, and then Base58Check encoding.
+        // For demonstration, we'll return a base64 string.
+        
+        return publicKey.base64EncodedString()
     }
 }
