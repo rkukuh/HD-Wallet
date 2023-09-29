@@ -13,8 +13,11 @@ struct ContentView: View {
     @State private var seedPhrase: String = .init()
     @State private var seed: Data = .init()
     
-    @State private var privateKey: Data = .init()
+    @State private var masterPrivateKey: Data = .init()
     @State private var chainCode: Data = .init()
+    
+    @State private var childPrivateKey: Data = .init()
+    @State private var publicKey: Data = .init()
     
     // MARK: Step 3: Optional Password (Salt)
     let passphrase = "b1gs3cr3t"
@@ -101,7 +104,7 @@ struct ContentView: View {
                             .foregroundStyle(.secondary)
                             .padding(.bottom, 5)
                         
-                        Text("\(privateKey.toHexString())")
+                        Text("\(masterPrivateKey.toHexString())")
                             .frame(height: 50)
                             .truncationMode(.middle)
                     }
@@ -126,7 +129,33 @@ struct ContentView: View {
                 
                 // MARK: Step 6: Generate (Child) Private Key and Public Key
                 
-                // Step 6 code goes here...
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading) {
+                        Label("Private Key (Child)", systemImage: "key.fill")
+                            .font(.callout)
+                            .foregroundStyle(.secondary)
+                            .padding(.bottom, 5)
+                        
+                        Text("\(childPrivateKey.toHexString())")
+                            .frame(height: 50)
+                            .truncationMode(.middle)
+                    }
+                    
+                    Divider()
+                    
+                    VStack(alignment: .leading) {
+                        Label("Public Key", systemImage: "key")
+                            .font(.callout)
+                            .foregroundStyle(.secondary)
+                            .padding(.bottom, 5)
+                        
+                        Text("\(publicKey.toHexString())")
+                            .frame(height: 50)
+                            .truncationMode(.middle)
+                    }
+                }
+                .padding()
+                .border(.red)
             }
             .onAppear {
                 entropy = Entropy.generate(for: 256)
@@ -135,7 +164,10 @@ struct ContentView: View {
                 
                 seed = Seeder.generate(from: seedPhrase, with: passphrase)
                 
-                (privateKey, chainCode) = WalletKey.generateMasterKey(from: seed)
+                (masterPrivateKey, chainCode) = WalletKey.generateMasterKey(from: seed)
+                
+                childPrivateKey = WalletKey.generateChildKey(from: masterPrivateKey, with: chainCode, index: 0)
+                publicKey = WalletKey.generatePublicKey(from: childPrivateKey)!
             }
             .navigationTitle("HD Wallet")
         }
