@@ -33,7 +33,7 @@ struct ContentView: View {
                     
                     Text("\(entropy.toBinaryString())")
                         .frame(height: 50)
-                        .truncationMode(.tail)
+                        .truncationMode(.middle)
                 }
                 .padding()
                 .border(.red)
@@ -47,6 +47,8 @@ struct ContentView: View {
                         .padding(.bottom, 5)
                     
                     Text(seedPhrase)
+                        .frame(height: 50)
+                        .truncationMode(.middle)
                 }
                 .padding()
                 .border(.red)
@@ -59,7 +61,9 @@ struct ContentView: View {
                         .foregroundStyle(.secondary)
                         .padding(.bottom, 5)
                     
-                    Text("\(seed.base64EncodedString())")
+                    Text("\(seed.toHexString())")
+                        .frame(height: 50)
+                        .truncationMode(.middle)
                 }
                 .padding()
                 .border(.red)
@@ -99,7 +103,7 @@ struct ContentView: View {
                 // Step 5 code goes here...
             }
             .onAppear {
-                entropy = Entropy.generate(for: 128)
+                entropy = Entropy.generate(for: 256)
                 
                 seedPhrase = Mnemonic.convert(from: entropy, wordList: Bitcoin.BIP39WordList)
                 
