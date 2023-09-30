@@ -27,7 +27,7 @@ extension String {
         return hexString.trimmingCharacters(in: .whitespaces)
     }
     
-    func truncateMiddle(to length: Int, separator: String = "...") -> String {
+    func truncateMiddle(to length: Int = 50, separator: String = "...") -> String {
             guard self.count > length else { return self }
             
             let prefixLength = Int(ceil(Double(length) / 2.0)) - (separator.count / 2)

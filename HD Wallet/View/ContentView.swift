@@ -141,14 +141,16 @@ struct ContentView: View {
                 (masterPrivateKey, chainCode) = WalletKey.generateMasterKey(from: seed)
                 
                 for index in 1...5 {
-                    let childPrivateKey = WalletKey.generateChildKey(from: masterPrivateKey, with: chainCode, index: UInt32(index))
+                    let childPrivateKey = WalletKey.generateChildKey(from: masterPrivateKey, 
+                                                                     with: chainCode,
+                                                                     index: UInt32(index))
                     
                     let publicKey = WalletKey.generatePublicKey(from: childPrivateKey)
                     let publicAddress = WalletKey.generatePublicAddress(for: publicKey)
                     
                     print("Child No. #\(index)")
                     print("Private Key: \t \(childPrivateKey.toHexString())")
-                    print("Public Key: \t \(publicKey.toHexString().truncateMiddle(to: 100))")
+                    print("Public Key: \t \(publicKey.toHexString().truncateMiddle())")
                     print("Address: \t\t \(publicAddress)")
                     print()
                     
