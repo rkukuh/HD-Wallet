@@ -41,7 +41,7 @@ struct WalletKey {
         return privateKey.publicKey.rawRepresentation
     }
     
-    static func generatePublicAddress(publicKey: Data) -> String {
+    static func generatePublicAddress(for publicKey: Data) -> String {
         // Normally, we'd perform SHA-256, then RIPEMD-160, and then Base58Check encoding.
         // For demonstration, we'll return a base64 string.
         

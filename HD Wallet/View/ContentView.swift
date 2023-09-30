@@ -121,9 +121,9 @@ struct ContentView: View {
                 
                 // MARK: Step 6: Generate (Child) Private Key and Public Key
                 
-                // Take a look at the Console
+                // Take a look at the Console for generated addresses
                 
-                Text("Successfully created 5 addresses for the same wallet")
+                Text("Created 5 addresses for the same wallet")
                     .frame(width: 350, height: 70)
                     .foregroundColor(.blue)
                     .overlay(
@@ -144,12 +144,12 @@ struct ContentView: View {
                     let childPrivateKey = WalletKey.generateChildKey(from: masterPrivateKey, with: chainCode, index: UInt32(index))
                     
                     let publicKey = WalletKey.generatePublicKey(from: childPrivateKey)
-                    let publicAddress = WalletKey.generatePublicAddress(publicKey: publicKey)
+                    let publicAddress = WalletKey.generatePublicAddress(for: publicKey)
                     
-                    print("Wallet No. #\(index)")
-                    print("PrivKey: \t \(childPrivateKey.toHexString())")
-                    print("PubKey: \t \(publicKey.toHexString().truncateMiddle(to: 100))")
-                    print("Address: \t \(publicAddress)")
+                    print("Child No. #\(index)")
+                    print("Private Key: \t \(childPrivateKey.toHexString())")
+                    print("Public Key: \t \(publicKey.toHexString().truncateMiddle(to: 100))")
+                    print("Address: \t\t \(publicAddress)")
                     print()
                     
                 }
