@@ -16,14 +16,13 @@ struct ContentView: View {
     @State private var masterPrivateKey: Data = .init()
     @State private var chainCode: Data = .init()
     
-    // MARK: Step 3: Optional Password (Salt)
     let passphrase = "b1gs3cr3t"
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 
-                // MARK: Step 1: Generate Entropy
+                // MARK: Step 1: Create Entropy
                 
                 VStack(alignment: .leading) {
                     Label("Entropy", systemImage: "sparkle")
@@ -49,7 +48,7 @@ struct ContentView: View {
                 }
                 .padding()
                 
-                // MARK: Step 4: Generate Seed from Seed Phrase
+                // MARK: Step 3: Generate Seed from Seed Phrase
                 
                 VStack(alignment: .leading) {
                     HStack {
@@ -87,7 +86,7 @@ struct ContentView: View {
                 
                 Divider()
                 
-                // MARK: Step 5: Generate HD Wallet
+                // MARK: Step 4: Create The Wallet
                 
                 Label("Crypto Wallet", systemImage: "wallet.pass")
                     .font(.headline)
@@ -119,7 +118,7 @@ struct ContentView: View {
                 .truncationMode(.middle)
                 .padding()
                 
-                // MARK: Step 6: Generate (Child) Private Key and Public Key
+                // MARK: Step 5: Create (Child) Private Key and Public Key
                 
                 // Take a look at the Console for generated addresses
                 
