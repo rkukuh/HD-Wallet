@@ -58,7 +58,7 @@ struct ContentView: View {
                             .foregroundStyle(.secondary)
                             .padding(.bottom, 5)
                         
-                        if Seeder.isValidHex(of: seed.toHexString()) {
+                        if Seed.isValidHex(of: seed.toHexString()) {
                             Text("Valid")
                                 .frame(width: 65)
                                 .foregroundColor(.green)
@@ -132,28 +132,28 @@ struct ContentView: View {
                     )
             }
             .onAppear {
-                entropy = Entropy.generate(for: 256)
+                entropy = Entropy.randomizeForBits(256)
                 
-                seedPhrase = Mnemonic.convert(from: entropy, using: Bitcoin.BIP39WordList)
+                seedPhrase = Mnemonic.convert(from: entropy, 
+                                              using: Bitcoin.BIP39WordList)
                 
-                seed = Seeder.generate(from: seedPhrase, with: passphrase)
+                seed = Seed.generate(from: seedPhrase, with: passphrase)
                 
-                (masterPrivateKey, chainCode) = WalletKey.generateMasterKey(from: seed)
+                (masterPrivateKey, chainCode) = Wallet.createMasterKey(from: seed)
                 
                 for index in 1...5 {
-                    let childPrivateKey = WalletKey.generateChildKey(from: masterPrivateKey, 
-                                                                     with: chainCode,
-                                                                     index: UInt32(index))
+                    let childPrivateKey = Wallet.deriveChildKey(from: masterPrivateKey,
+                                                                with: chainCode,
+                                                                index: UInt32(index))
                     
-                    let publicKey = WalletKey.generatePublicKey(from: childPrivateKey)
-                    let publicAddress = WalletKey.generatePublicAddress(for: publicKey)
+                    let publicKey = Wallet.createPublicKey(from: childPrivateKey)
+                    let publicAddress = Wallet.createPublicAddress(for: publicKey)
                     
                     print("Child No. #\(index)")
                     print("Private Key: \t \(childPrivateKey.toHexString())")
                     print("Public Key: \t \(publicKey.toHexString().truncateMiddle())")
                     print("Address: \t\t \(publicAddress)")
                     print()
-                    
                 }
             }
             .navigationTitle("HD Wallet")

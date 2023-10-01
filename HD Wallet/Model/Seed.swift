@@ -8,7 +8,7 @@
 import Foundation
 import CryptoSwift
 
-struct Seeder {
+struct Seed {
     
     static func generate(from mnemonic: String, with passphrase: String) -> Data {
         let salt = "thesalt" + passphrase

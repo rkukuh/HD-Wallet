@@ -15,8 +15,8 @@
 		4A7343C92AC47A1D00728007 /* Bitcoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7343C82AC47A1D00728007 /* Bitcoin.swift */; };
 		4A7343CB2AC47A9500728007 /* Mnemonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7343CA2AC47A9500728007 /* Mnemonic.swift */; };
 		4A7343CE2AC4804700728007 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4A7343CD2AC4804700728007 /* CryptoSwift */; };
-		4A7343D22AC4FDE000728007 /* Seeder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7343D12AC4FDE000728007 /* Seeder.swift */; };
-		4A7343D62AC500CE00728007 /* WalletKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7343D52AC500CE00728007 /* WalletKey.swift */; };
+		4A7343D22AC4FDE000728007 /* Seed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7343D12AC4FDE000728007 /* Seed.swift */; };
+		4A7343D62AC500CE00728007 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7343D52AC500CE00728007 /* Wallet.swift */; };
 		4AA961992AC6C63A001C3785 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA961982AC6C63A001C3785 /* Data+Extension.swift */; };
 		4AA9619B2AC6E6AC001C3785 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA9619A2AC6E6AC001C3785 /* String+Extension.swift */; };
 /* End PBXBuildFile section */
@@ -30,8 +30,8 @@
 		4A6E47B22AC4778E0018D3F4 /* Entropy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entropy.swift; sourceTree = "<group>"; };
 		4A7343C82AC47A1D00728007 /* Bitcoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitcoin.swift; sourceTree = "<group>"; };
 		4A7343CA2AC47A9500728007 /* Mnemonic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mnemonic.swift; sourceTree = "<group>"; };
-		4A7343D12AC4FDE000728007 /* Seeder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seeder.swift; sourceTree = "<group>"; };
-		4A7343D52AC500CE00728007 /* WalletKey.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletKey.swift; sourceTree = "<group>"; };
+		4A7343D12AC4FDE000728007 /* Seed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seed.swift; sourceTree = "<group>"; };
+		4A7343D52AC500CE00728007 /* Wallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		4AA961982AC6C63A001C3785 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		4AA9619A2AC6E6AC001C3785 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,8 +92,8 @@
 				4A7343C82AC47A1D00728007 /* Bitcoin.swift */,
 				4A6E47B22AC4778E0018D3F4 /* Entropy.swift */,
 				4A7343CA2AC47A9500728007 /* Mnemonic.swift */,
-				4A7343D12AC4FDE000728007 /* Seeder.swift */,
-				4A7343D52AC500CE00728007 /* WalletKey.swift */,
+				4A7343D12AC4FDE000728007 /* Seed.swift */,
+				4A7343D52AC500CE00728007 /* Wallet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -198,14 +198,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4A7343D62AC500CE00728007 /* WalletKey.swift in Sources */,
+				4A7343D62AC500CE00728007 /* Wallet.swift in Sources */,
 				4AA9619B2AC6E6AC001C3785 /* String+Extension.swift in Sources */,
 				4AA961992AC6C63A001C3785 /* Data+Extension.swift in Sources */,
 				4A7343C92AC47A1D00728007 /* Bitcoin.swift in Sources */,
 				4A6E47A42AC476330018D3F4 /* ContentView.swift in Sources */,
 				4A6E47B32AC4778E0018D3F4 /* Entropy.swift in Sources */,
 				4A6E47A22AC476330018D3F4 /* HD_WalletApp.swift in Sources */,
-				4A7343D22AC4FDE000728007 /* Seeder.swift in Sources */,
+				4A7343D22AC4FDE000728007 /* Seed.swift in Sources */,
 				4A7343CB2AC47A9500728007 /* Mnemonic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

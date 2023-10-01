@@ -10,9 +10,9 @@ import CryptoSwift
 import CryptoKit
 import CommonCrypto
 
-struct WalletKey {
+struct Wallet {
     
-    static func generateMasterKey(from seed: Data) -> (privateKey: Data, chainCode: Data) {
+    static func createMasterKey(from seed: Data) -> (privateKey: Data, chainCode: Data) {
         let hmac = try! HMAC(key: seed.bytes, variant: .sha2(.sha512))
             .authenticate(seed.bytes)
         
@@ -22,7 +22,7 @@ struct WalletKey {
         return (privateKey, chainCode)
     }
     
-    static func generateChildKey(from masterKey: Data, with chainCode: Data, index: UInt32) -> Data {
+    static func deriveChildKey(from masterKey: Data, with chainCode: Data, index: UInt32) -> Data {
         var key = masterKey
         
         key.append(contentsOf: withUnsafeBytes(of: index.bigEndian) { Data($0) })
@@ -35,13 +35,13 @@ struct WalletKey {
         return Data(childHash.prefix(32))
     }
     
-    static func generatePublicKey(from privateKey: Data) -> Data {
+    static func createPublicKey(from privateKey: Data) -> Data {
         let privateKey = try! P256.Signing.PrivateKey(rawRepresentation: privateKey)
         
         return privateKey.publicKey.rawRepresentation
     }
     
-    static func generatePublicAddress(for publicKey: Data) -> String {
+    static func createPublicAddress(for publicKey: Data) -> String {
         // Normally, we'd perform SHA-256, then RIPEMD-160, and then Base58Check encoding.
         // For demonstration, we'll return a base64 string.
         
