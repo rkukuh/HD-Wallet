@@ -20,6 +20,9 @@
 		4A7343D62AC500CE00728007 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7343D52AC500CE00728007 /* Wallet.swift */; };
 		4AA961992AC6C63A001C3785 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA961982AC6C63A001C3785 /* Data+Extension.swift */; };
 		4AA9619B2AC6E6AC001C3785 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA9619A2AC6E6AC001C3785 /* String+Extension.swift */; };
+		4AB0AD322AC963530021626F /* Console.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB0AD312AC963530021626F /* Console.png */; };
+		4AB460D32AC9640000896B74 /* Simulator 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB460D12AC9640000896B74 /* Simulator 1.png */; };
+		4AB460D42AC9640000896B74 /* Simulator 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB460D22AC9640000896B74 /* Simulator 2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +39,9 @@
 		4A7343D52AC500CE00728007 /* Wallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
 		4AA961982AC6C63A001C3785 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		4AA9619A2AC6E6AC001C3785 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		4AB0AD312AC963530021626F /* Console.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Console.png; sourceTree = "<group>"; };
+		4AB460D12AC9640000896B74 /* Simulator 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator 1.png"; sourceTree = "<group>"; };
+		4AB460D22AC9640000896B74 /* Simulator 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator 2.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +81,7 @@
 				4A6E47B02AC476B50018D3F4 /* View */,
 				4A6E47B12AC476BD0018D3F4 /* ViewModel */,
 				4AA961972AC6C625001C3785 /* Extension */,
+				4AB0AD2E2AC9625B0021626F /* Screenshots */,
 				4A6E47A52AC476340018D3F4 /* Assets.xcassets */,
 				4A6E47A72AC476340018D3F4 /* Preview Content */,
 			);
@@ -123,6 +130,16 @@
 				4AA9619A2AC6E6AC001C3785 /* String+Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		4AB0AD2E2AC9625B0021626F /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				4AB460D12AC9640000896B74 /* Simulator 1.png */,
+				4AB460D22AC9640000896B74 /* Simulator 2.png */,
+				4AB0AD312AC963530021626F /* Console.png */,
+			);
+			path = Screenshots;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -190,7 +207,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A38CA422AC95A8B000A8F71 /* README.md in Resources */,
+				4AB0AD322AC963530021626F /* Console.png in Resources */,
+				4AB460D42AC9640000896B74 /* Simulator 2.png in Resources */,
 				4A6E47A92AC476340018D3F4 /* Preview Assets.xcassets in Resources */,
+				4AB460D32AC9640000896B74 /* Simulator 1.png in Resources */,
 				4A6E47A62AC476340018D3F4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
