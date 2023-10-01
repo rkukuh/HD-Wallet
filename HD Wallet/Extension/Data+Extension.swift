@@ -8,7 +8,6 @@
 import Foundation
 
 extension Data {
-    
     func toBinaryString() -> String {
         return self.map { byte in
             String(byte, radix: 2).padding(toLength: 8, withPad: "0", startingAt: 0)

@@ -28,14 +28,14 @@ extension String {
     }
     
     func truncateMiddle(to length: Int = 50, separator: String = "...") -> String {
-            guard self.count > length else { return self }
-            
-            let prefixLength = Int(ceil(Double(length) / 2.0)) - (separator.count / 2)
-            let suffixLength = Int(floor(Double(length) / 2.0)) - (separator.count / 2)
-            
-            let prefix = self.prefix(prefixLength)
-            let suffix = self.suffix(suffixLength)
-            
-            return "\(prefix)\(separator)\(suffix)"
-        }
+        guard self.count > length else { return self }
+        
+        let prefixLength = Int(ceil(Double(length) / 2.0)) - (separator.count / 2)
+        let suffixLength = Int(floor(Double(length) / 2.0)) - (separator.count / 2)
+        
+        let prefix = self.prefix(prefixLength)
+        let suffix = self.suffix(suffixLength)
+        
+        return "\(prefix)\(separator)\(suffix)"
+    }
 }
