@@ -3,7 +3,7 @@ HD Wallet, atau Hierarchical Deterministic Wallet, adalah salah satu fitur digit
 
 HD Wallet muncul pertama kali dicetuskan tahun 2012 dalam dokumen [BIP-32](https://github.com/bitcoin/bips/blob/master/bip-0032.mediawiki).
 
-/pic1 /pic 2
+<img src="HD Wallet/Screenshots/Simulator 2.png" width="30%"> <img src="HD Wallet/Screenshots/Console.png" width="65%">
 
 ## Proyek Apa Ini?
 Proyek ini adalah versi over-simplified bagaimana sebuah HD Wallet dibuat. Saya sebut over-simplified karena walaupun langkah demi langkah dan algoritmanya legit, akan tetapi:
