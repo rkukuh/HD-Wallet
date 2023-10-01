@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A38CA422AC95A8B000A8F71 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A38CA412AC95A8B000A8F71 /* README.md */; };
 		4A6E47A22AC476330018D3F4 /* HD_WalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E47A12AC476330018D3F4 /* HD_WalletApp.swift */; };
 		4A6E47A42AC476330018D3F4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E47A32AC476330018D3F4 /* ContentView.swift */; };
 		4A6E47A62AC476340018D3F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A6E47A52AC476340018D3F4 /* Assets.xcassets */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A38CA412AC95A8B000A8F71 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		4A6E479E2AC476330018D3F4 /* HD Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HD Wallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A6E47A12AC476330018D3F4 /* HD_WalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HD_WalletApp.swift; sourceTree = "<group>"; };
 		4A6E47A32AC476330018D3F4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -67,6 +69,7 @@
 		4A6E47A02AC476330018D3F4 /* HD Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				4A38CA412AC95A8B000A8F71 /* README.md */,
 				4A6E47A12AC476330018D3F4 /* HD_WalletApp.swift */,
 				4A6E47AF2AC476A10018D3F4 /* Model */,
 				4A6E47B02AC476B50018D3F4 /* View */,
@@ -186,6 +189,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A38CA422AC95A8B000A8F71 /* README.md in Resources */,
 				4A6E47A92AC476340018D3F4 /* Preview Assets.xcassets in Resources */,
 				4A6E47A62AC476340018D3F4 /* Assets.xcassets in Resources */,
 			);
