@@ -118,10 +118,6 @@ struct ContentView: View {
                 .truncationMode(.middle)
                 .padding()
                 
-                // MARK: Step 5: Create (Child) Private Key and Public Key
-                
-                // Take a look at the Console for generated addresses
-                
                 Text("Created 5 addresses for the same wallet")
                     .frame(width: 350, height: 70)
                     .foregroundColor(.blue)
@@ -139,6 +135,9 @@ struct ContentView: View {
                 seed = Seed.generate(from: seedPhrase, with: passphrase)
                 
                 (masterPrivateKey, chainCode) = Wallet.createMasterKey(from: seed)
+                
+                // MARK: Step 5: Create (Child) Private Key and Public Key
+                // MARK: Step 6: Create Wallet's Public Address
                 
                 for index in 1...5 {
                     let childPrivateKey = Wallet.deriveChildKey(from: masterPrivateKey,
