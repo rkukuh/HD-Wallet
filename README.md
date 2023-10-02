@@ -10,7 +10,7 @@ Proyek ini adalah versi over-simplified bagaimana sebuah HD Wallet dibuat. Saya 
 
 1. Tidak ada blockchain network yang dilibatkan.  
     Dengan demikian belum bisa dibuktikan apakah bisa dilakukan transaksi  pada wallet yang tercipta.
-2. Tidak ada fungsi pengecekan balik integritas hashed yang tercipta.  
+2. Tidak ada fungsi pengecekan balik integritas hashes yang tercipta.  
     Karena tidak ada transaksi yang terjadi, maka fungsi-fungsi tersebut sengaja tidak dibuat.
 3. Beberapa fungsi kriptografi tidak dibuat dengan seharusnya.  
     Terutama jika fungsi kriptografi tersebut bisa dibuat versi sederhananya.
