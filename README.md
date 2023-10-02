@@ -45,6 +45,6 @@ Dalam HD Wallet ini terdapat Master Private Key dan Chain Code-nya. Keduanya aka
 Kombinasi dari master private key dan chain code, yang diproses dengan algoritma ECDSA akan menghasilkan pasangan child private key dan public key-nya.
 
 ### Langkah 6: Menciptakan Wallet’s Public Address
-Wallet Address bisa dianalogikan seperti alamat email: Orang lain perlu tahu alamat ini agar bisa mengirimkan asset. Kalian boleh menyebarkan address ini kepada siapapun. Orang lain tidak bisa mengakses wallet kalian melalui address ini. Wallet address = Email address.
+Wallet Address bisa dianalogikan seperti alamat email: (1) Orang lain perlu tahu alamat ini agar bisa mengirimkan asset. (2) Kalian boleh menyebarkan address ini kepada siapapun. (3) Orang lain tidak bisa mengakses wallet kalian melalui address ini. Intinya: Wallet address = Email address.
 
 /eof
