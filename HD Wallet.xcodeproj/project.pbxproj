@@ -7,18 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4A38CA422AC95A8B000A8F71 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4A38CA412AC95A8B000A8F71 /* README.md */; };
 		4A6E47A22AC476330018D3F4 /* HD_WalletApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E47A12AC476330018D3F4 /* HD_WalletApp.swift */; };
 		4A6E47A42AC476330018D3F4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E47A32AC476330018D3F4 /* ContentView.swift */; };
 		4A6E47A62AC476340018D3F4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A6E47A52AC476340018D3F4 /* Assets.xcassets */; };
 		4A6E47A92AC476340018D3F4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A6E47A82AC476340018D3F4 /* Preview Assets.xcassets */; };
+		4A6E47B32AC4778E0018D3F4 /* Entropy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6E47B22AC4778E0018D3F4 /* Entropy.swift */; };
+		4A7343C92AC47A1D00728007 /* Bitcoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7343C82AC47A1D00728007 /* Bitcoin.swift */; };
+		4A7343CB2AC47A9500728007 /* Mnemonic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7343CA2AC47A9500728007 /* Mnemonic.swift */; };
+		4A7343CE2AC4804700728007 /* CryptoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4A7343CD2AC4804700728007 /* CryptoSwift */; };
+		4A7343D22AC4FDE000728007 /* Seed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7343D12AC4FDE000728007 /* Seed.swift */; };
+		4A7343D62AC500CE00728007 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A7343D52AC500CE00728007 /* Wallet.swift */; };
+		4AA961992AC6C63A001C3785 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA961982AC6C63A001C3785 /* Data+Extension.swift */; };
+		4AA9619B2AC6E6AC001C3785 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AA9619A2AC6E6AC001C3785 /* String+Extension.swift */; };
+		4AB0AD322AC963530021626F /* Console.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB0AD312AC963530021626F /* Console.png */; };
+		4AB460D32AC9640000896B74 /* Simulator 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB460D12AC9640000896B74 /* Simulator 1.png */; };
+		4AB460D42AC9640000896B74 /* Simulator 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB460D22AC9640000896B74 /* Simulator 2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4A38CA412AC95A8B000A8F71 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		4A6E479E2AC476330018D3F4 /* HD Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HD Wallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4A6E47A12AC476330018D3F4 /* HD_WalletApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HD_WalletApp.swift; sourceTree = "<group>"; };
 		4A6E47A32AC476330018D3F4 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4A6E47A52AC476340018D3F4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A6E47A82AC476340018D3F4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4A6E47B22AC4778E0018D3F4 /* Entropy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entropy.swift; sourceTree = "<group>"; };
+		4A7343C82AC47A1D00728007 /* Bitcoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bitcoin.swift; sourceTree = "<group>"; };
+		4A7343CA2AC47A9500728007 /* Mnemonic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mnemonic.swift; sourceTree = "<group>"; };
+		4A7343D12AC4FDE000728007 /* Seed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Seed.swift; sourceTree = "<group>"; };
+		4A7343D52AC500CE00728007 /* Wallet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		4AA961982AC6C63A001C3785 /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
+		4AA9619A2AC6E6AC001C3785 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		4AB0AD312AC963530021626F /* Console.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Console.png; sourceTree = "<group>"; };
+		4AB460D12AC9640000896B74 /* Simulator 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator 1.png"; sourceTree = "<group>"; };
+		4AB460D22AC9640000896B74 /* Simulator 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator 2.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A7343CE2AC4804700728007 /* CryptoSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,10 +75,13 @@
 		4A6E47A02AC476330018D3F4 /* HD Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				4A38CA412AC95A8B000A8F71 /* README.md */,
 				4A6E47A12AC476330018D3F4 /* HD_WalletApp.swift */,
 				4A6E47AF2AC476A10018D3F4 /* Model */,
 				4A6E47B02AC476B50018D3F4 /* View */,
 				4A6E47B12AC476BD0018D3F4 /* ViewModel */,
+				4AA961972AC6C625001C3785 /* Extension */,
+				4AB0AD2E2AC9625B0021626F /* Screenshots */,
 				4A6E47A52AC476340018D3F4 /* Assets.xcassets */,
 				4A6E47A72AC476340018D3F4 /* Preview Content */,
 			);
@@ -72,6 +99,11 @@
 		4A6E47AF2AC476A10018D3F4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4A7343C82AC47A1D00728007 /* Bitcoin.swift */,
+				4A6E47B22AC4778E0018D3F4 /* Entropy.swift */,
+				4A7343CA2AC47A9500728007 /* Mnemonic.swift */,
+				4A7343D12AC4FDE000728007 /* Seed.swift */,
+				4A7343D52AC500CE00728007 /* Wallet.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -91,6 +123,25 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		4AA961972AC6C625001C3785 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4AA961982AC6C63A001C3785 /* Data+Extension.swift */,
+				4AA9619A2AC6E6AC001C3785 /* String+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		4AB0AD2E2AC9625B0021626F /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				4AB460D12AC9640000896B74 /* Simulator 1.png */,
+				4AB460D22AC9640000896B74 /* Simulator 2.png */,
+				4AB0AD312AC963530021626F /* Console.png */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -107,6 +158,9 @@
 			dependencies = (
 			);
 			name = "HD Wallet";
+			packageProductDependencies = (
+				4A7343CD2AC4804700728007 /* CryptoSwift */,
+			);
 			productName = "HD Wallet";
 			productReference = 4A6E479E2AC476330018D3F4 /* HD Wallet.app */;
 			productType = "com.apple.product-type.application";
@@ -135,6 +189,9 @@
 				Base,
 			);
 			mainGroup = 4A6E47952AC476330018D3F4;
+			packageReferences = (
+				4A7343CC2AC4804700728007 /* XCRemoteSwiftPackageReference "CryptoSwift" */,
+			);
 			productRefGroup = 4A6E479F2AC476330018D3F4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -149,7 +206,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A38CA422AC95A8B000A8F71 /* README.md in Resources */,
+				4AB0AD322AC963530021626F /* Console.png in Resources */,
+				4AB460D42AC9640000896B74 /* Simulator 2.png in Resources */,
 				4A6E47A92AC476340018D3F4 /* Preview Assets.xcassets in Resources */,
+				4AB460D32AC9640000896B74 /* Simulator 1.png in Resources */,
 				4A6E47A62AC476340018D3F4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -161,8 +222,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4A7343D62AC500CE00728007 /* Wallet.swift in Sources */,
+				4AA9619B2AC6E6AC001C3785 /* String+Extension.swift in Sources */,
+				4AA961992AC6C63A001C3785 /* Data+Extension.swift in Sources */,
+				4A7343C92AC47A1D00728007 /* Bitcoin.swift in Sources */,
 				4A6E47A42AC476330018D3F4 /* ContentView.swift in Sources */,
+				4A6E47B32AC4778E0018D3F4 /* Entropy.swift in Sources */,
 				4A6E47A22AC476330018D3F4 /* HD_WalletApp.swift in Sources */,
+				4A7343D22AC4FDE000728007 /* Seed.swift in Sources */,
+				4A7343CB2AC47A9500728007 /* Mnemonic.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +436,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4A7343CC2AC4804700728007 /* XCRemoteSwiftPackageReference "CryptoSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/krzyzanowskim/CryptoSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.8.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4A7343CD2AC4804700728007 /* CryptoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4A7343CC2AC4804700728007 /* XCRemoteSwiftPackageReference "CryptoSwift" */;
+			productName = CryptoSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4A6E47962AC476330018D3F4 /* Project object */;
 }
