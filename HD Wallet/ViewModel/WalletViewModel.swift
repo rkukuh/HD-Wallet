@@ -25,7 +25,8 @@ class WalletViewModel: ObservableObject {
     func generateWallet() {
         self.entropy = self.entropyGenerator.randomizeForBits(256)
         
-        self.seedPhrase = self.mnemonic.convert(from: self.entropy, using: self.bitcoin.BIP39WordList)
+        self.seedPhrase = self.mnemonic.convert(from: self.entropy, 
+                                                using: self.bitcoin.BIP39WordList)
         
         do {
             if let generatedSeed = try self.seedGenerator.generate(from: self.seedPhrase, 
