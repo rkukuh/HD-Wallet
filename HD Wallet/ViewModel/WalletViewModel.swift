@@ -15,6 +15,7 @@ class WalletViewModel: ObservableObject {
     @Published var chainCode: Data = .init()
     
     let passphrase = "b1gs3cr3t"
+    
     let bitcoin = Bitcoin()
     let entropyGenerator = Entropy()
     let mnemonic = Mnemonic()
@@ -26,7 +27,18 @@ class WalletViewModel: ObservableObject {
         
         self.seedPhrase = self.mnemonic.convert(from: self.entropy, using: self.bitcoin.BIP39WordList)
         
-        self.seed = try! self.seedGenerator.generate(from: self.seedPhrase, with: self.passphrase)
+        do {
+            if let generatedSeed = try self.seedGenerator.generate(from: self.seedPhrase, 
+                                                                   with: self.passphrase) {
+                self.seed = generatedSeed
+            } else {
+                print("Seed generation returned nil")
+            }
+        } catch SeedGenerationError.keyGenerationFailed {
+            print("Failed to generate seed")
+        } catch {
+            print("An unexpected error occurred: \(error)")
+        }
         
         (self.masterPrivateKey, self.chainCode) = try! self.wallet.createMasterKey(from: self.seed)
     }

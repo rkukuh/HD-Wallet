@@ -8,18 +8,24 @@
 import Foundation
 import CryptoSwift
 
+enum SeedGenerationError: Error {
+    case keyGenerationFailed
+}
+
 struct Seed {
-    
-    func generate(from mnemonic: String, with passphrase: String) -> Data {
+    func generate(from mnemonic: String, with passphrase: String) throws -> Data? {
         let salt = "thesalt" + passphrase
         
-        let seed = try! PKCS5.PBKDF2(password: mnemonic.bytes,
-                                     salt: salt.bytes,
-                                     iterations: 2048,
-                                     keyLength: 64,
-                                     variant: .sha2(.sha512)).calculate()
-        
-        return Data(seed)
+        do {
+            let seed = try PKCS5.PBKDF2(password: mnemonic.bytes,
+                                        salt: salt.bytes,
+                                        iterations: 2048,
+                                        keyLength: 64,
+                                        variant: .sha2(.sha512)).calculate()
+            return Data(seed)
+        } catch {
+            throw SeedGenerationError.keyGenerationFailed
+        }
     }
     
     static func isValidHex(of seedInHexFormat: String) -> Bool {
