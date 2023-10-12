@@ -9,7 +9,7 @@ import Foundation
 
 struct Mnemonic {
     
-    static func convert(from entropy: Data, using wordList: [String]) -> String {
+    func convert(from entropy: Data, using wordList: [String]) -> String {
         var mnemonic = ""
         
         for _ in 1..<24 {

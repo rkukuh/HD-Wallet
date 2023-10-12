@@ -7,21 +7,22 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct WalletView: View {
+    @ObservedObject var viewModel: WalletViewModel
     
     @State private var entropy: Data = .init()
-    @State private var seedPhrase: String = .init()
     @State private var seed: Data = .init()
-    
     @State private var masterPrivateKey: Data = .init()
     @State private var chainCode: Data = .init()
+    @State private var wallet: Wallet = .init()
     
-    let passphrase = "b1gs3cr3t"
+    init(viewModel: WalletViewModel) {
+        self.viewModel = WalletViewModel()
+    }
     
     var body: some View {
         NavigationStack {
             ScrollView {
-                
                 // MARK: Step 1: Create Entropy
                 
                 VStack(alignment: .leading) {
@@ -44,7 +45,7 @@ struct ContentView: View {
                         .foregroundStyle(.secondary)
                         .padding(.bottom, 5)
                     
-                    Text(seedPhrase)
+                    Text(viewModel.seedPhrase)
                 }
                 .padding()
                 
@@ -127,25 +128,25 @@ struct ContentView: View {
                     )
             }
             .onAppear {
-                entropy = Entropy.randomizeForBits(256)
+                viewModel.generateWallet()
                 
-                seedPhrase = Mnemonic.convert(from: entropy, 
-                                              using: Bitcoin.BIP39WordList)
-                
-                seed = Seed.generate(from: seedPhrase, with: passphrase)
-                
-                (masterPrivateKey, chainCode) = Wallet.createMasterKey(from: seed)
+                entropy = viewModel.entropy
+                seed = viewModel.seed
+                masterPrivateKey = viewModel.masterPrivateKey
+                chainCode = viewModel.chainCode
                 
                 // MARK: Step 5: Create (Child) Private Key and Public Key
                 // MARK: Step 6: Create Wallet's Public Address
                 
+                wallet = viewModel.wallet
+                
                 for index in 1...5 {
-                    let childPrivateKey = Wallet.deriveChildKey(from: masterPrivateKey,
+                    let childPrivateKey = wallet.deriveChildKey(from: masterPrivateKey,
                                                                 with: chainCode,
                                                                 index: UInt32(index))
                     
-                    let publicKey = Wallet.createPublicKey(from: childPrivateKey)
-                    let publicAddress = Wallet.createPublicAddress(for: publicKey)
+                    let publicKey = wallet.createPublicKey(from: childPrivateKey)
+                    let publicAddress = wallet.createPublicAddress(for: publicKey)
                     
                     print("Child No. #\(index)")
                     print("Private Key: \t \(childPrivateKey.toHexString())")
@@ -160,5 +161,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    ContentView()
+    WalletView(viewModel: WalletViewModel())
 }
