@@ -40,6 +40,12 @@ class WalletViewModel: ObservableObject {
             print("An unexpected error occurred: \(error)")
         }
         
-        (self.masterPrivateKey, self.chainCode) = try! self.wallet.createMasterKey(from: self.seed)
+        do {
+            (self.masterPrivateKey, self.chainCode) = try self.wallet.createMasterKey(from: self.seed)
+        } catch MasterKeyCreationError.hmacAuthenticationFailed {
+            print("Failed to create master key")
+        } catch {
+            print("An unexpected error occurred: \(error)")
+        }
     }
 }
