@@ -10,7 +10,7 @@ import CryptoSwift
 
 struct Seed {
     
-    static func generate(from mnemonic: String, with passphrase: String) -> Data {
+    func generate(from mnemonic: String, with passphrase: String) -> Data {
         let salt = "thesalt" + passphrase
         
         let seed = try! PKCS5.PBKDF2(password: mnemonic.bytes,

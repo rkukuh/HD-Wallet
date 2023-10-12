@@ -11,7 +11,9 @@ import SwiftUI
 struct HD_WalletApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            let vm = WalletViewModel()
+            
+            WalletView(viewModel: vm)
         }
     }
 }
