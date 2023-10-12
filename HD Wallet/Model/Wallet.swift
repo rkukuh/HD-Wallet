@@ -10,16 +10,23 @@ import CryptoSwift
 import CryptoKit
 import CommonCrypto
 
+enum MasterKeyCreationError: Error {
+    case hmacAuthenticationFailed
+}
+
 struct Wallet {
-    
-    func createMasterKey(from seed: Data) -> (privateKey: Data, chainCode: Data) {
-        let hmac = try! HMAC(key: seed.bytes, variant: .sha2(.sha512))
-            .authenticate(seed.bytes)
-        
-        let privateKey = Data(hmac[0..<32])
-        let chainCode = Data(hmac[32..<64])
-        
-        return (privateKey, chainCode)
+    func createMasterKey(from seed: Data) throws -> (privateKey: Data, chainCode: Data) {
+        do {
+            let hmac = try HMAC(key: seed.bytes, variant: .sha2(.sha512))
+                .authenticate(seed.bytes)
+            
+            let privateKey = Data(hmac[0..<32])
+            let chainCode = Data(hmac[32..<64])
+            
+            return (privateKey, chainCode)
+        } catch {
+            throw MasterKeyCreationError.hmacAuthenticationFailed
+        }
     }
     
     func deriveChildKey(from masterKey: Data, with chainCode: Data, index: UInt32) -> Data {
