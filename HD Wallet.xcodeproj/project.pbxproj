@@ -24,6 +24,7 @@
 		4AB460D32AC9640000896B74 /* Simulator 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB460D12AC9640000896B74 /* Simulator 1.png */; };
 		4AB460D42AC9640000896B74 /* Simulator 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB460D22AC9640000896B74 /* Simulator 2.png */; };
 		4AF030852AD78051008F5B15 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF030842AD78051008F5B15 /* WalletViewModel.swift */; };
+		4AF030872AD7E9B8008F5B15 /* HeadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF030862AD7E9B8008F5B15 /* HeadingLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		4AB460D12AC9640000896B74 /* Simulator 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator 1.png"; sourceTree = "<group>"; };
 		4AB460D22AC9640000896B74 /* Simulator 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator 2.png"; sourceTree = "<group>"; };
 		4AF030842AD78051008F5B15 /* WalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
+		4AF030862AD7E9B8008F5B15 /* HeadingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				4A6E47A32AC476330018D3F4 /* WalletView.swift */,
+				4AF030862AD7E9B8008F5B15 /* HeadingLabel.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				4A6E47B32AC4778E0018D3F4 /* Entropy.swift in Sources */,
 				4A6E47A22AC476330018D3F4 /* HD_WalletApp.swift in Sources */,
 				4AF030852AD78051008F5B15 /* WalletViewModel.swift in Sources */,
+				4AF030872AD7E9B8008F5B15 /* HeadingLabel.swift in Sources */,
 				4A7343D22AC4FDE000728007 /* Seed.swift in Sources */,
 				4A7343CB2AC47A9500728007 /* Mnemonic.swift in Sources */,
 			);
