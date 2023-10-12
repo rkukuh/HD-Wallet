@@ -26,10 +26,7 @@ struct WalletView: View {
                 // MARK: Step 1: Create Entropy
                 
                 VStack(alignment: .leading) {
-                    Label("Entropy", systemImage: "sparkle")
-                        .font(.callout)
-                        .foregroundStyle(.secondary)
-                        .padding(.bottom, 5)
+                    HeadingLabel(title: "Entropy", icon: "sparkle")
                     
                     Text("\(entropy.toBinaryString().binaryToHex())")
                         .frame(height: 50)
@@ -40,10 +37,7 @@ struct WalletView: View {
                 // MARK: Step 2: Convert Entropy to Mnemonic Seed Phrase
                 
                 VStack(alignment: .leading) {
-                    Label("Seed Phrase", systemImage: "text.book.closed")
-                        .font(.callout)
-                        .foregroundStyle(.secondary)
-                        .padding(.bottom, 5)
+                    HeadingLabel(title: "Seed Phrase", icon: "text.book.closed")
                     
                     Text(viewModel.seedPhrase)
                 }
@@ -53,10 +47,7 @@ struct WalletView: View {
                 
                 VStack(alignment: .leading) {
                     HStack {
-                        Label("Seed", systemImage: "leaf.arrow.circlepath")
-                            .font(.callout)
-                            .foregroundStyle(.secondary)
-                            .padding(.bottom, 5)
+                        HeadingLabel(title: "Seed", icon: "leaf.arrow.circlepath")
                         
                         if Seed.isValidHex(of: seed.toHexString()) {
                             Text("Valid")
@@ -96,10 +87,7 @@ struct WalletView: View {
                 
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
-                        Label("Private Key (Master)", systemImage: "key.fill")
-                            .font(.callout)
-                            .foregroundStyle(.secondary)
-                            .padding(.bottom, 5)
+                        HeadingLabel(title: "Private Key (Master)", icon: "key.fill")
                         
                         Text("\(masterPrivateKey.toHexString())")
                     }
@@ -107,10 +95,7 @@ struct WalletView: View {
                     Divider()
                     
                     VStack(alignment: .leading) {
-                        Label("Chain Code", systemImage: "link")
-                            .font(.callout)
-                            .foregroundStyle(.secondary)
-                            .padding(.bottom, 5)
+                        HeadingLabel(title: "Chain Code", icon: "link")
                         
                         Text("\(chainCode.toHexString())")
                     }
