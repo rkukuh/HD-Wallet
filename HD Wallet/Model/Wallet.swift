@@ -42,7 +42,7 @@ struct Wallet {
             
             return Data(childHash.prefix(32))
         } catch {
-            print("Error when derive child key: \(error)")
+            print("Error when deriving child key: \(error)")
             
             return nil
         }
@@ -54,7 +54,7 @@ struct Wallet {
             
             return privateKeyInstance.publicKey.rawRepresentation
         } catch {
-            print("Error when create public key: \(error)")
+            print("Error when creating public key: \(error)")
             
             return nil
         }
