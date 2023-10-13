@@ -51,22 +51,10 @@ struct WalletView: View {
                         HeadingLabel(title: "Seed", icon: "leaf.arrow.circlepath")
                         
                         if Seed.isValidHex(of: seed.toHexString()) {
-                            Text("Valid")
-                                .frame(width: 65)
-                                .foregroundColor(.green)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 5)
-                                        .stroke(.green)
-                                )
+                            BadgeLabel(title: "Valid", color: .green)
                                 .padding(.bottom, 5)
                         } else {
-                            Text("Tempered")
-                                .frame(width: 100)
-                                .foregroundColor(.red)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 5)
-                                        .stroke(.red)
-                                )
+                            BadgeLabel(title: "Tempered", color: .red, frameWidth: 100)
                                 .padding(.bottom, 5)
                         }
                     }
@@ -81,11 +69,10 @@ struct WalletView: View {
                 
                 // MARK: Step 4: Create The Wallet
                 
-                Label("Crypto Wallet", systemImage: "wallet.pass")
-                    .font(.headline)
-                    .foregroundStyle(.secondary)
+                HeadingLabel(title: "Crypto Wallet", icon: "wallet.pass", textStyle: .headline)
                     .padding(.top, 10)
-                
+                    .padding(.bottom, -5)
+                                
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
                         HeadingLabel(title: "Private Key (Master)", icon: "key.fill")
@@ -114,43 +101,46 @@ struct WalletView: View {
                     )
             }
             .onAppear {
-                viewModel.generateWallet()
-                
-                entropy = viewModel.entropy
-                seed = viewModel.seed
-                masterPrivateKey = viewModel.masterPrivateKey
-                chainCode = viewModel.chainCode
-                
                 // MARK: Step 5: Create (Child) Private Key and Public Key
                 // MARK: Step 6: Create Wallet's Public Address
                 
-                wallet = viewModel.wallet
-                
-                for index in 1...5 {
-                    guard let childPrivateKey = wallet.deriveChildKey(from: masterPrivateKey,
-                                                                      with: chainCode,
-                                                                      index: UInt32(index)) else {
-                        print("Failed to derive child key")
-                        return
-                    }
-
-                    guard let publicKey = wallet.createPublicKey(from: childPrivateKey) else {
-                        print("Failed to create public key")
-                        return
-                    }
-
-                    let publicAddress = wallet.createPublicAddress(for: publicKey)
-
-                    print("Child No. #\(index)")
-                    print("Private Key: \t \(childPrivateKey.toHexString())")
-                    print("Public Key: \t \(publicKey.toHexString().truncateMiddle())")
-                    print("Address: \t\t \(publicAddress) \n")
-                }
+                generateWalletAndItsChild()
             }
             .navigationTitle("HD Wallet")
         }
     }
     
+    private func generateWalletAndItsChild() {
+        viewModel.generateWallet()
+        
+        entropy = viewModel.entropy
+        seed = viewModel.seed
+        masterPrivateKey = viewModel.masterPrivateKey
+        chainCode = viewModel.chainCode
+        
+        wallet = viewModel.wallet
+        
+        for index in 1...5 {
+            guard let childPrivateKey = wallet.deriveChildKey(from: masterPrivateKey,
+                                                              with: chainCode,
+                                                              index: UInt32(index)) else {
+                print("Failed to derive child key")
+                return
+            }
+
+            guard let publicKey = wallet.createPublicKey(from: childPrivateKey) else {
+                print("Failed to create public key")
+                return
+            }
+
+            let publicAddress = wallet.createPublicAddress(for: publicKey)
+
+            print("Child No. #\(index)")
+            print("Private Key: \t \(childPrivateKey.toHexString())")
+            print("Public Key: \t \(publicKey.toHexString().truncateMiddle())")
+            print("Address: \t\t \(publicAddress) \n")
+        }
+    }
 }
 
 #Preview {
