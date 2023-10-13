@@ -30,9 +30,10 @@ final class MnemonicTests: XCTestCase {
     func testConvert() {
         let entropy = Data([UInt8](repeating: 0, count: 16)) // 128 bits of entropy
         let phrase = mnemonic.convert(from: entropy, using: bitcoin.BIP39WordList)
+        
         let words = phrase.split(separator: " ")
         
-        XCTAssertEqual(words.count, 24)  // 128 bits should yield a 12-word mnemonic
+        XCTAssertEqual(words.count, 24)  // 128 bits should yield a 24-words mnemonic
     }
     
 }
