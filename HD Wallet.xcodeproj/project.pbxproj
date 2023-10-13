@@ -27,6 +27,7 @@
 		4AF030872AD7E9B8008F5B15 /* HeadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF030862AD7E9B8008F5B15 /* HeadingLabel.swift */; };
 		4AF0309F2AD8D86E008F5B15 /* HD_WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0309E2AD8D86E008F5B15 /* HD_WalletTests.swift */; };
 		4AF030A62AD8E12E008F5B15 /* BitcoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF030A52AD8E12E008F5B15 /* BitcoinTests.swift */; };
+		4AF030A82AD8E1CE008F5B15 /* EntropyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF030A72AD8E1CE008F5B15 /* EntropyTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		4AF0309C2AD8D86E008F5B15 /* HD WalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HD WalletTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AF0309E2AD8D86E008F5B15 /* HD_WalletTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HD_WalletTests.swift; sourceTree = "<group>"; };
 		4AF030A52AD8E12E008F5B15 /* BitcoinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinTests.swift; sourceTree = "<group>"; };
+		4AF030A72AD8E1CE008F5B15 /* EntropyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntropyTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +179,7 @@
 			children = (
 				4AF0309E2AD8D86E008F5B15 /* HD_WalletTests.swift */,
 				4AF030A52AD8E12E008F5B15 /* BitcoinTests.swift */,
+				4AF030A72AD8E1CE008F5B15 /* EntropyTests.swift */,
 			);
 			path = "HD WalletTests";
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AF030A82AD8E1CE008F5B15 /* EntropyTests.swift in Sources */,
 				4AF030A62AD8E12E008F5B15 /* BitcoinTests.swift in Sources */,
 				4AF0309F2AD8D86E008F5B15 /* HD_WalletTests.swift in Sources */,
 			);
