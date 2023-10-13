@@ -187,8 +187,8 @@
 				4AF030A52AD8E12E008F5B15 /* BitcoinTests.swift */,
 				4AF030A72AD8E1CE008F5B15 /* EntropyTests.swift */,
 				4AF030AB2AD8E85F008F5B15 /* MnemonicTests.swift */,
-				4AF030A92AD8E245008F5B15 /* WalletViewModelTests.swift */,
 				4AF030AD2AD92891008F5B15 /* SeedTests.swift */,
+				4AF030A92AD8E245008F5B15 /* WalletViewModelTests.swift */,
 			);
 			path = "HD WalletTests";
 			sourceTree = "<group>";
