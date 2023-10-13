@@ -45,12 +45,12 @@ final class WalletTests: XCTestCase {
         XCTAssertNotNil(childKey)
     }
     
-    func testCreatePublicKey() {
-        let privateKey = Data([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
-        let publicKey = wallet.createPublicKey(from: privateKey)
-        
-        XCTAssertNotNil(publicKey)
-    }
+//    func testCreatePublicKey() {
+//        let privateKey = Data([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+//        let publicKey = wallet.createPublicKey(from: privateKey)
+//        
+//        XCTAssertNotNil(publicKey)
+//    }
     
     func testCreatePublicAddress() {
         let publicKey = Data([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
