@@ -127,20 +127,24 @@ struct WalletView: View {
                 wallet = viewModel.wallet
                 
                 for index in 1...5 {
-                    if let childPrivateKey = wallet.deriveChildKey(from: masterPrivateKey,
-                                                                   with: chainCode,
-                                                                   index: UInt32(index)) {
-                        
-                        if let publicKey = wallet.createPublicKey(from: childPrivateKey) {
-                            let publicAddress = wallet.createPublicAddress(for: publicKey)
-                            
-                            print("Child No. #\(index)")
-                            print("Private Key: \t \(childPrivateKey.toHexString())")
-                            print("Public Key: \t \(publicKey.toHexString().truncateMiddle())")
-                            print("Address: \t\t \(publicAddress)")
-                            print()
-                        }
+                    guard let childPrivateKey = wallet.deriveChildKey(from: masterPrivateKey,
+                                                                      with: chainCode,
+                                                                      index: UInt32(index)) else {
+                        print("Failed to derive child key")
+                        return
                     }
+
+                    guard let publicKey = wallet.createPublicKey(from: childPrivateKey) else {
+                        print("Failed to create public key")
+                        return
+                    }
+
+                    let publicAddress = wallet.createPublicAddress(for: publicKey)
+
+                    print("Child No. #\(index)")
+                    print("Private Key: \t \(childPrivateKey.toHexString())")
+                    print("Public Key: \t \(publicKey.toHexString().truncateMiddle())")
+                    print("Address: \t\t \(publicAddress) \n")
                 }
             }
             .navigationTitle("HD Wallet")
