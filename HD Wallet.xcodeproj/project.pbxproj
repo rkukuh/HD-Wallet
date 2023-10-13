@@ -23,6 +23,7 @@
 		4AB0AD322AC963530021626F /* Console.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB0AD312AC963530021626F /* Console.png */; };
 		4AB460D32AC9640000896B74 /* Simulator 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB460D12AC9640000896B74 /* Simulator 1.png */; };
 		4AB460D42AC9640000896B74 /* Simulator 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 4AB460D22AC9640000896B74 /* Simulator 2.png */; };
+		4AE69D612AD99018004010BE /* BadgeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AE69D602AD99018004010BE /* BadgeLabel.swift */; };
 		4AF030852AD78051008F5B15 /* WalletViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF030842AD78051008F5B15 /* WalletViewModel.swift */; };
 		4AF030872AD7E9B8008F5B15 /* HeadingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF030862AD7E9B8008F5B15 /* HeadingLabel.swift */; };
 		4AF0309F2AD8D86E008F5B15 /* HD_WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF0309E2AD8D86E008F5B15 /* HD_WalletTests.swift */; };
@@ -61,6 +62,7 @@
 		4AB0AD312AC963530021626F /* Console.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Console.png; sourceTree = "<group>"; };
 		4AB460D12AC9640000896B74 /* Simulator 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator 1.png"; sourceTree = "<group>"; };
 		4AB460D22AC9640000896B74 /* Simulator 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator 2.png"; sourceTree = "<group>"; };
+		4AE69D602AD99018004010BE /* BadgeLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeLabel.swift; sourceTree = "<group>"; };
 		4AF030842AD78051008F5B15 /* WalletViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModel.swift; sourceTree = "<group>"; };
 		4AF030862AD7E9B8008F5B15 /* HeadingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadingLabel.swift; sourceTree = "<group>"; };
 		4AF0309C2AD8D86E008F5B15 /* HD WalletTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "HD WalletTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -150,7 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				4A6E47A32AC476330018D3F4 /* WalletView.swift */,
-				4AF030862AD7E9B8008F5B15 /* HeadingLabel.swift */,
+				4AE69D5F2AD98FFD004010BE /* Components */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -180,6 +182,15 @@
 				4AB0AD312AC963530021626F /* Console.png */,
 			);
 			path = Screenshots;
+			sourceTree = "<group>";
+		};
+		4AE69D5F2AD98FFD004010BE /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				4AF030862AD7E9B8008F5B15 /* HeadingLabel.swift */,
+				4AE69D602AD99018004010BE /* BadgeLabel.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		4AF0309D2AD8D86E008F5B15 /* HD WalletTests */ = {
@@ -312,6 +323,7 @@
 				4A7343C92AC47A1D00728007 /* Bitcoin.swift in Sources */,
 				4A6E47A42AC476330018D3F4 /* WalletView.swift in Sources */,
 				4A6E47B32AC4778E0018D3F4 /* Entropy.swift in Sources */,
+				4AE69D612AD99018004010BE /* BadgeLabel.swift in Sources */,
 				4A6E47A22AC476330018D3F4 /* HD_WalletApp.swift in Sources */,
 				4AF030852AD78051008F5B15 /* WalletViewModel.swift in Sources */,
 				4AF030872AD7E9B8008F5B15 /* HeadingLabel.swift in Sources */,

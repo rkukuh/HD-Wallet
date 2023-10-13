@@ -51,22 +51,10 @@ struct WalletView: View {
                         HeadingLabel(title: "Seed", icon: "leaf.arrow.circlepath")
                         
                         if Seed.isValidHex(of: seed.toHexString()) {
-                            Text("Valid")
-                                .frame(width: 65)
-                                .foregroundColor(.green)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 5)
-                                        .stroke(.green)
-                                )
+                            BadgeLabel(title: "Valid", color: .green)
                                 .padding(.bottom, 5)
                         } else {
-                            Text("Tempered")
-                                .frame(width: 100)
-                                .foregroundColor(.red)
-                                .overlay(
-                                    RoundedRectangle(cornerRadius: 5)
-                                        .stroke(.red)
-                                )
+                            BadgeLabel(title: "Tempered", color: .red, frameWidth: 100)
                                 .padding(.bottom, 5)
                         }
                     }
