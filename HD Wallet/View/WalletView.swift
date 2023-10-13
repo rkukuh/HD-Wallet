@@ -127,18 +127,19 @@ struct WalletView: View {
                 wallet = viewModel.wallet
                 
                 for index in 1...5 {
-                    let childPrivateKey = wallet.deriveChildKey(from: masterPrivateKey,
-                                                                with: chainCode,
-                                                                index: UInt32(index))
-                    
-                    if let publicKey = wallet.createPublicKey(from: childPrivateKey) {
-                        let publicAddress = wallet.createPublicAddress(for: publicKey)
+                    if let childPrivateKey = wallet.deriveChildKey(from: masterPrivateKey,
+                                                                   with: chainCode,
+                                                                   index: UInt32(index)) {
                         
-                        print("Child No. #\(index)")
-                        print("Private Key: \t \(childPrivateKey.toHexString())")
-                        print("Public Key: \t \(publicKey.toHexString().truncateMiddle())")
-                        print("Address: \t\t \(publicAddress)")
-                        print()
+                        if let publicKey = wallet.createPublicKey(from: childPrivateKey) {
+                            let publicAddress = wallet.createPublicAddress(for: publicKey)
+                            
+                            print("Child No. #\(index)")
+                            print("Private Key: \t \(childPrivateKey.toHexString())")
+                            print("Public Key: \t \(publicKey.toHexString().truncateMiddle())")
+                            print("Address: \t\t \(publicAddress)")
+                            print()
+                        }
                     }
                 }
             }

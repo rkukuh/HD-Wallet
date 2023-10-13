@@ -29,17 +29,23 @@ struct Wallet {
         }
     }
     
-    func deriveChildKey(from masterKey: Data, with chainCode: Data, index: UInt32) -> Data {
+    func deriveChildKey(from masterKey: Data, with chainCode: Data, index: UInt32) -> Data? {
         var key = masterKey
         
         key.append(contentsOf: withUnsafeBytes(of: index.bigEndian) { Data($0) })
         
         let hmacKey: Array<UInt8> = Array(chainCode)
         
-        let childHash = try! HMAC(key: hmacKey, variant: .sha2(.sha512))
-            .authenticate(Array(key))
-        
-        return Data(childHash.prefix(32))
+        do {
+            let childHash = try HMAC(key: hmacKey,
+                                     variant: .sha2(.sha512)).authenticate(Array(key))
+            
+            return Data(childHash.prefix(32))
+        } catch {
+            print("Failed to derive child key: \(error)")
+            
+            return nil
+        }
     }
     
     func createPublicKey(from privateKey: Data) -> Data? {
@@ -55,7 +61,6 @@ struct Wallet {
     }
     
     func createPublicAddress(for publicKey: Data) -> String {
-        // Normally, we'd perform SHA-256, then RIPEMD-160, and then Base58Check encoding.
         // For demonstration, we'll return a base64 string.
         
         return publicKey.base64EncodedString()
