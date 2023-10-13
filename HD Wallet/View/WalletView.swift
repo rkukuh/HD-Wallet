@@ -69,11 +69,10 @@ struct WalletView: View {
                 
                 // MARK: Step 4: Create The Wallet
                 
-                Label("Crypto Wallet", systemImage: "wallet.pass")
-                    .font(.headline)
-                    .foregroundStyle(.secondary)
+                HeadingLabel(title: "Crypto Wallet", icon: "wallet.pass", textStyle: .headline)
                     .padding(.top, 10)
-                
+                    .padding(.bottom, -5)
+                                
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
                         HeadingLabel(title: "Private Key (Master)", icon: "key.fill")
