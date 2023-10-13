@@ -8,6 +8,7 @@
 import Foundation
 
 extension String {
+    
     func binaryToHex() -> String {
         var hexString = ""
         var startIndex = self.startIndex
@@ -38,4 +39,5 @@ extension String {
         
         return "\(prefix)\(separator)\(suffix)"
     }
+    
 }

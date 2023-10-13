@@ -18,4 +18,5 @@ struct Mnemonic {
         
         return mnemonic.trimmingCharacters(in: .whitespaces)
     }
+    
 }

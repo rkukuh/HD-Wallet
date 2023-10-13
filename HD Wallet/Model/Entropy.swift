@@ -16,4 +16,5 @@ struct Entropy {
         
         return Data(bytes)
     }
+    
 }

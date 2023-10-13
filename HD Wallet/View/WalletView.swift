@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WalletView: View {
+    
     @ObservedObject var viewModel: WalletViewModel
     
     @State private var entropy: Data = .init()
@@ -143,6 +144,7 @@ struct WalletView: View {
             .navigationTitle("HD Wallet")
         }
     }
+    
 }
 
 #Preview {

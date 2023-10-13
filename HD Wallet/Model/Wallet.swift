@@ -54,4 +54,5 @@ struct Wallet {
         
         return publicKey.base64EncodedString()
     }
+    
 }

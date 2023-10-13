@@ -18,6 +18,7 @@ struct HeadingLabel: View {
             .foregroundStyle(.secondary)
             .padding(.bottom, 5)
     }
+    
 }
 
 #Preview {

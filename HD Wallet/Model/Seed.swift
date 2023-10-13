@@ -35,4 +35,5 @@ struct Seed {
         
         return seedInHexFormat.count == 128 && validHexCharacters.isSuperset(of: seedCharacterSet)
     }
+    
 }
