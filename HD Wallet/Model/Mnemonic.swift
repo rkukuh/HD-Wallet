@@ -12,7 +12,7 @@ struct Mnemonic {
     func convert(from entropy: Data, using wordList: [String]) -> String {
         var mnemonic = ""
         
-        for _ in 1..<24 {
+        for _ in 1...24 {
             mnemonic += wordList[Int(arc4random_uniform(UInt32(wordList.count)))] + " "
         }
         
