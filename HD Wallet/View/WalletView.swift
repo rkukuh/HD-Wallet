@@ -102,43 +102,46 @@ struct WalletView: View {
                     )
             }
             .onAppear {
-                viewModel.generateWallet()
-                
-                entropy = viewModel.entropy
-                seed = viewModel.seed
-                masterPrivateKey = viewModel.masterPrivateKey
-                chainCode = viewModel.chainCode
-                
                 // MARK: Step 5: Create (Child) Private Key and Public Key
                 // MARK: Step 6: Create Wallet's Public Address
                 
-                wallet = viewModel.wallet
-                
-                for index in 1...5 {
-                    guard let childPrivateKey = wallet.deriveChildKey(from: masterPrivateKey,
-                                                                      with: chainCode,
-                                                                      index: UInt32(index)) else {
-                        print("Failed to derive child key")
-                        return
-                    }
-
-                    guard let publicKey = wallet.createPublicKey(from: childPrivateKey) else {
-                        print("Failed to create public key")
-                        return
-                    }
-
-                    let publicAddress = wallet.createPublicAddress(for: publicKey)
-
-                    print("Child No. #\(index)")
-                    print("Private Key: \t \(childPrivateKey.toHexString())")
-                    print("Public Key: \t \(publicKey.toHexString().truncateMiddle())")
-                    print("Address: \t\t \(publicAddress) \n")
-                }
+                generateWalletAndItsChild()
             }
             .navigationTitle("HD Wallet")
         }
     }
     
+    private func generateWalletAndItsChild() {
+        viewModel.generateWallet()
+        
+        entropy = viewModel.entropy
+        seed = viewModel.seed
+        masterPrivateKey = viewModel.masterPrivateKey
+        chainCode = viewModel.chainCode
+        
+        wallet = viewModel.wallet
+        
+        for index in 1...5 {
+            guard let childPrivateKey = wallet.deriveChildKey(from: masterPrivateKey,
+                                                              with: chainCode,
+                                                              index: UInt32(index)) else {
+                print("Failed to derive child key")
+                return
+            }
+
+            guard let publicKey = wallet.createPublicKey(from: childPrivateKey) else {
+                print("Failed to create public key")
+                return
+            }
+
+            let publicAddress = wallet.createPublicAddress(for: publicKey)
+
+            print("Child No. #\(index)")
+            print("Private Key: \t \(childPrivateKey.toHexString())")
+            print("Public Key: \t \(publicKey.toHexString().truncateMiddle())")
+            print("Address: \t\t \(publicAddress) \n")
+        }
+    }
 }
 
 #Preview {
