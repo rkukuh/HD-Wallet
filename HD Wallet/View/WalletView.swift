@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct WalletView: View {
+    
     @ObservedObject var viewModel: WalletViewModel
     
     @State private var entropy: Data = .init()
@@ -126,23 +127,30 @@ struct WalletView: View {
                 wallet = viewModel.wallet
                 
                 for index in 1...5 {
-                    let childPrivateKey = wallet.deriveChildKey(from: masterPrivateKey,
-                                                                with: chainCode,
-                                                                index: UInt32(index))
-                    
-                    let publicKey = wallet.createPublicKey(from: childPrivateKey)
+                    guard let childPrivateKey = wallet.deriveChildKey(from: masterPrivateKey,
+                                                                      with: chainCode,
+                                                                      index: UInt32(index)) else {
+                        print("Failed to derive child key")
+                        return
+                    }
+
+                    guard let publicKey = wallet.createPublicKey(from: childPrivateKey) else {
+                        print("Failed to create public key")
+                        return
+                    }
+
                     let publicAddress = wallet.createPublicAddress(for: publicKey)
-                    
+
                     print("Child No. #\(index)")
                     print("Private Key: \t \(childPrivateKey.toHexString())")
                     print("Public Key: \t \(publicKey.toHexString().truncateMiddle())")
-                    print("Address: \t\t \(publicAddress)")
-                    print()
+                    print("Address: \t\t \(publicAddress) \n")
                 }
             }
             .navigationTitle("HD Wallet")
         }
     }
+    
 }
 
 #Preview {

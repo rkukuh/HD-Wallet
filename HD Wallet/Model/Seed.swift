@@ -13,6 +13,7 @@ enum SeedGenerationError: Error {
 }
 
 struct Seed {
+    
     func generate(from mnemonic: String, with passphrase: String) throws -> Data? {
         let salt = "thesalt" + passphrase
         
@@ -34,4 +35,5 @@ struct Seed {
         
         return seedInHexFormat.count == 128 && validHexCharacters.isSuperset(of: seedCharacterSet)
     }
+    
 }

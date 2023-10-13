@@ -8,6 +8,7 @@
 import Foundation
 
 extension Data {
+    
     func toBinaryString() -> String {
         return self.map { byte in
             String(byte, radix: 2).padding(toLength: 8, withPad: "0", startingAt: 0)
@@ -17,4 +18,5 @@ extension Data {
     func toHexString() -> String {
         return self.map { String(format: "%02x", $0) }.joined()
     }
+    
 }
