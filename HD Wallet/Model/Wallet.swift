@@ -17,8 +17,8 @@ struct Wallet {
     
     func createMasterKey(from seed: Data) throws -> (privateKey: Data, chainCode: Data) {
         do {
-            let hmac = try HMAC(key: seed.bytes, variant: .sha2(.sha512))
-                .authenticate(seed.bytes)
+            let hmac = try HMAC(key: seed.bytes, 
+                                variant: .sha2(.sha512)).authenticate(seed.bytes)
             
             let privateKey = Data(hmac[0..<32])
             let chainCode = Data(hmac[32..<64])
