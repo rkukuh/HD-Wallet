@@ -10,19 +10,19 @@ import XCTest
 
 final class MnemonicTests: XCTestCase {
     
-    var mnemonic: Mnemonic!
     var bitcoin: Bitcoin!
+    var mnemonic: Mnemonic!
     
     override func setUp() {
         super.setUp()
         
-        mnemonic = Mnemonic()
         bitcoin = Bitcoin()
+        mnemonic = Mnemonic()
     }
     
     override func tearDown() {
-        mnemonic = nil
         bitcoin = nil
+        mnemonic = nil
         
         super.tearDown()
     }
