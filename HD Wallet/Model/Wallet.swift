@@ -42,10 +42,16 @@ struct Wallet {
         return Data(childHash.prefix(32))
     }
     
-    func createPublicKey(from privateKey: Data) -> Data {
-        let privateKey = try! P256.Signing.PrivateKey(rawRepresentation: privateKey)
-        
-        return privateKey.publicKey.rawRepresentation
+    func createPublicKey(from privateKey: Data) -> Data? {
+        do {
+            let privateKeyInstance = try P256.Signing.PrivateKey(rawRepresentation: privateKey)
+            
+            return privateKeyInstance.publicKey.rawRepresentation
+        } catch {
+            print("Failed to create public key: \(error)")
+            
+            return nil
+        }
     }
     
     func createPublicAddress(for publicKey: Data) -> String {

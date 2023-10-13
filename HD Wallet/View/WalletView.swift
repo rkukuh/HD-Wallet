@@ -131,14 +131,15 @@ struct WalletView: View {
                                                                 with: chainCode,
                                                                 index: UInt32(index))
                     
-                    let publicKey = wallet.createPublicKey(from: childPrivateKey)
-                    let publicAddress = wallet.createPublicAddress(for: publicKey)
-                    
-                    print("Child No. #\(index)")
-                    print("Private Key: \t \(childPrivateKey.toHexString())")
-                    print("Public Key: \t \(publicKey.toHexString().truncateMiddle())")
-                    print("Address: \t\t \(publicAddress)")
-                    print()
+                    if let publicKey = wallet.createPublicKey(from: childPrivateKey) {
+                        let publicAddress = wallet.createPublicAddress(for: publicKey)
+                        
+                        print("Child No. #\(index)")
+                        print("Private Key: \t \(childPrivateKey.toHexString())")
+                        print("Public Key: \t \(publicKey.toHexString().truncateMiddle())")
+                        print("Address: \t\t \(publicAddress)")
+                        print()
+                    }
                 }
             }
             .navigationTitle("HD Wallet")
