@@ -8,6 +8,7 @@
 import Foundation
 
 class WalletViewModel: ObservableObject {
+    
     @Published var entropy: Data = .init()
     @Published var seedPhrase: String = .init()
     @Published var seed: Data = .init()
@@ -49,4 +50,5 @@ class WalletViewModel: ObservableObject {
             print("An unexpected error occurred: \(error)")
         }
     }
+    
 }
