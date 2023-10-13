@@ -13,6 +13,7 @@ enum SeedGenerationError: Error {
 }
 
 struct Seed {
+    
     func generate(from mnemonic: String, with passphrase: String) throws -> Data? {
         let salt = "thesalt" + passphrase
         

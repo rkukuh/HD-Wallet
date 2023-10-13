@@ -8,13 +8,13 @@
 import Foundation
 import CryptoSwift
 import CryptoKit
-import CommonCrypto
 
 enum MasterKeyCreationError: Error {
     case hmacAuthenticationFailed
 }
 
 struct Wallet {
+    
     func createMasterKey(from seed: Data) throws -> (privateKey: Data, chainCode: Data) {
         do {
             let hmac = try HMAC(key: seed.bytes, variant: .sha2(.sha512))
