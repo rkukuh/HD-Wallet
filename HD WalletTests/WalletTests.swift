@@ -6,30 +6,57 @@
 //
 
 import XCTest
+@testable import HD_Wallet
 
 final class WalletTests: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    var wallet: Wallet!
+    
+    override func setUp() {
+        super.setUp()
+        
+        wallet = Wallet()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    
+    override func tearDown() {
+        wallet = nil
+        
+        super.tearDown()
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func testCreateMasterKey() {
+        let seed = Data([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+        
+        do {
+            let keys = try wallet.createMasterKey(from: seed)
+            
+            XCTAssertNotNil(keys.privateKey)
+            XCTAssertNotNil(keys.chainCode)
+        } catch {
+            XCTFail("Failed to create master key: \(error)")
         }
     }
-
+    
+    func testDeriveChildKey() {
+        let masterKey = Data([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+        let chainCode = Data([10, 11, 12, 13, 14, 15, 16, 17, 18, 19])
+        let childKey = wallet.deriveChildKey(from: masterKey, with: chainCode, index: 0)
+        
+        XCTAssertNotNil(childKey)
+    }
+    
+    func testCreatePublicKey() {
+        let privateKey = Data([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+        let publicKey = wallet.createPublicKey(from: privateKey)
+        
+        XCTAssertNotNil(publicKey)
+    }
+    
+    func testCreatePublicAddress() {
+        let publicKey = Data([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+        let publicAddress = wallet.createPublicAddress(for: publicKey)
+        
+        XCTAssertNotNil(publicAddress)
+    }
+    
 }
