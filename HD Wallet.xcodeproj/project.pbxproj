@@ -29,6 +29,7 @@
 		4AF030A62AD8E12E008F5B15 /* BitcoinTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF030A52AD8E12E008F5B15 /* BitcoinTests.swift */; };
 		4AF030A82AD8E1CE008F5B15 /* EntropyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF030A72AD8E1CE008F5B15 /* EntropyTests.swift */; };
 		4AF030AA2AD8E245008F5B15 /* WalletViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF030A92AD8E245008F5B15 /* WalletViewModelTests.swift */; };
+		4AF030AC2AD8E85F008F5B15 /* MnemonicTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AF030AB2AD8E85F008F5B15 /* MnemonicTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		4AF030A52AD8E12E008F5B15 /* BitcoinTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BitcoinTests.swift; sourceTree = "<group>"; };
 		4AF030A72AD8E1CE008F5B15 /* EntropyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntropyTests.swift; sourceTree = "<group>"; };
 		4AF030A92AD8E245008F5B15 /* WalletViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletViewModelTests.swift; sourceTree = "<group>"; };
+		4AF030AB2AD8E85F008F5B15 /* MnemonicTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MnemonicTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				4AF0309E2AD8D86E008F5B15 /* HD_WalletTests.swift */,
 				4AF030A52AD8E12E008F5B15 /* BitcoinTests.swift */,
 				4AF030A72AD8E1CE008F5B15 /* EntropyTests.swift */,
+				4AF030AB2AD8E85F008F5B15 /* MnemonicTests.swift */,
 				4AF030A92AD8E245008F5B15 /* WalletViewModelTests.swift */,
 			);
 			path = "HD WalletTests";
@@ -318,6 +321,7 @@
 				4AF030A82AD8E1CE008F5B15 /* EntropyTests.swift in Sources */,
 				4AF030AA2AD8E245008F5B15 /* WalletViewModelTests.swift in Sources */,
 				4AF030A62AD8E12E008F5B15 /* BitcoinTests.swift in Sources */,
+				4AF030AC2AD8E85F008F5B15 /* MnemonicTests.swift in Sources */,
 				4AF0309F2AD8D86E008F5B15 /* HD_WalletTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
