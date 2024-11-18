@@ -47,4 +47,9 @@ Kombinasi dari master private key dan chain code, yang diproses dengan algoritma
 ### Langkah 6: Menciptakan Wallet’s Public Address
 Wallet Address bisa dianalogikan seperti alamat email: (1) Orang lain perlu tahu alamat ini agar bisa mengirimkan asset. (2) Kalian boleh menyebarkan address ini kepada siapapun. (3) Orang lain tidak bisa mengakses wallet kalian melalui address ini. Intinya: Wallet address = Email address.
 
+
+## Repo Activity
+
+![Alt](https://repobeats.axiom.co/api/embed/3cd89251f5a0d6d0b26819b921ecc43e26d59caf.svg "Repobeats analytics image")
+
 /eof
